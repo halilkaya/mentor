@@ -1,0 +1,553 @@
+[2013-12-16 11:22:31] log.ERROR: exception 'Swift_TransportException' with message 'Connection could not be established with host mail.bolkaryazilim.com [Connection refused #111]' in /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php:259
+Stack trace:
+#0 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php(64): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(115): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php(80): Swift_Transport_AbstractSmtpTransport->start()
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(291): Swift_Mailer->send(Object(Swift_Message))
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(120): Illuminate\Mail\Mailer->sendSwiftMessage(Object(Swift_Message))
+#5 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(212): Illuminate\Mail\Mailer->send('emails.newquest...', Array, Object(Closure))
+#6 /var/www/mentor/app/controllers/QuestionController.php(113): Illuminate\Support\Facades\Facade::__callStatic('send', Array)
+#7 /var/www/mentor/app/controllers/QuestionController.php(113): Illuminate\Support\Facades\Mail::send('emails.newquest...', Array, Object(Closure))
+#8 [internal function]: QuestionController->save()
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('save', Array)
+#11 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'save', Array)
+#12 [internal function]: Illuminate\Routing\{closure}()
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2013-12-16 11:49:32] log.ERROR: exception 'Swift_TransportException' with message 'Connection to tcp://mail.mentormarmara.com:587 Timed Out' in /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php:405
+Stack trace:
+#0 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(291): Swift_Transport_AbstractSmtpTransport->_getFullResponse(0)
+#1 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(119): Swift_Transport_AbstractSmtpTransport->_readGreeting()
+#2 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php(80): Swift_Transport_AbstractSmtpTransport->start()
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(291): Swift_Mailer->send(Object(Swift_Message))
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(120): Illuminate\Mail\Mailer->sendSwiftMessage(Object(Swift_Message))
+#5 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(212): Illuminate\Mail\Mailer->send('emails.newanswe...', Array, Object(Closure))
+#6 /var/www/mentor/app/controllers/AnswerController.php(59): Illuminate\Support\Facades\Facade::__callStatic('send', Array)
+#7 /var/www/mentor/app/controllers/AnswerController.php(59): Illuminate\Support\Facades\Mail::send('emails.newanswe...', Array, Object(Closure))
+#8 [internal function]: AnswerController->save()
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('save', Array)
+#11 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'save', Array)
+#12 [internal function]: Illuminate\Routing\{closure}()
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2013-12-16 12:05:32] log.ERROR: exception 'Swift_TransportException' with message 'Connection to tcp://mail.mentormarmara.com:587 Timed Out' in /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php:405
+Stack trace:
+#0 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(291): Swift_Transport_AbstractSmtpTransport->_getFullResponse(0)
+#1 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(119): Swift_Transport_AbstractSmtpTransport->_readGreeting()
+#2 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php(80): Swift_Transport_AbstractSmtpTransport->start()
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(291): Swift_Mailer->send(Object(Swift_Message))
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(120): Illuminate\Mail\Mailer->sendSwiftMessage(Object(Swift_Message))
+#5 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(212): Illuminate\Mail\Mailer->send('emails.newanswe...', Array, Object(Closure))
+#6 /var/www/mentor/app/controllers/AnswerController.php(59): Illuminate\Support\Facades\Facade::__callStatic('send', Array)
+#7 /var/www/mentor/app/controllers/AnswerController.php(59): Illuminate\Support\Facades\Mail::send('emails.newanswe...', Array, Object(Closure))
+#8 [internal function]: AnswerController->save()
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('save', Array)
+#11 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'save', Array)
+#12 [internal function]: Illuminate\Routing\{closure}()
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2013-12-16 12:08:04] log.ERROR: exception 'Swift_TransportException' with message 'Expected response code 354 but got code "550", with message "550 SMTP AUTH is required for message submission on port 587
+"' in /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php:386
+Stack trace:
+#0 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(281): Swift_Transport_AbstractSmtpTransport->_assertResponseCode('550 SMTP AUTH i...', Array)
+#1 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/EsmtpTransport.php(245): Swift_Transport_AbstractSmtpTransport->executeCommand('DATA??', Array, Array)
+#2 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(321): Swift_Transport_EsmtpTransport->executeCommand('DATA??', Array)
+#3 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(432): Swift_Transport_AbstractSmtpTransport->_doDataCommand()
+#4 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(449): Swift_Transport_AbstractSmtpTransport->_doMailTransaction(Object(Swift_Message), 'info@mentormarm...', Array, Array)
+#5 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(176): Swift_Transport_AbstractSmtpTransport->_sendTo(Object(Swift_Message), 'info@mentormarm...', Array, Array)
+#6 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php(86): Swift_Transport_AbstractSmtpTransport->send(Object(Swift_Message), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(291): Swift_Mailer->send(Object(Swift_Message))
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(120): Illuminate\Mail\Mailer->sendSwiftMessage(Object(Swift_Message))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(212): Illuminate\Mail\Mailer->send('emails.newanswe...', Array, Object(Closure))
+#10 /var/www/mentor/app/controllers/AnswerController.php(59): Illuminate\Support\Facades\Facade::__callStatic('send', Array)
+#11 /var/www/mentor/app/controllers/AnswerController.php(59): Illuminate\Support\Facades\Mail::send('emails.newanswe...', Array, Object(Closure))
+#12 [internal function]: AnswerController->save()
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('save', Array)
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'save', Array)
+#16 [internal function]: Illuminate\Routing\{closure}()
+#17 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#18 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#19 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-12-16 12:08:36] log.ERROR: exception 'Swift_TransportException' with message 'Connection to tcp://mail.mentormarmara.com:587 Timed Out' in /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php:405
+Stack trace:
+#0 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(291): Swift_Transport_AbstractSmtpTransport->_getFullResponse(0)
+#1 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(119): Swift_Transport_AbstractSmtpTransport->_readGreeting()
+#2 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php(80): Swift_Transport_AbstractSmtpTransport->start()
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(291): Swift_Mailer->send(Object(Swift_Message))
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(120): Illuminate\Mail\Mailer->sendSwiftMessage(Object(Swift_Message))
+#5 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(212): Illuminate\Mail\Mailer->send('emails.newanswe...', Array, Object(Closure))
+#6 /var/www/mentor/app/controllers/AnswerController.php(59): Illuminate\Support\Facades\Facade::__callStatic('send', Array)
+#7 /var/www/mentor/app/controllers/AnswerController.php(59): Illuminate\Support\Facades\Mail::send('emails.newanswe...', Array, Object(Closure))
+#8 [internal function]: AnswerController->save()
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('save', Array)
+#11 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'save', Array)
+#12 [internal function]: Illuminate\Routing\{closure}()
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2013-12-16 12:17:45] log.ERROR: exception 'Swift_TransportException' with message 'Expected response code 354 but got code "550", with message "550 SMTP AUTH is required for message submission on port 587
+"' in /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php:386
+Stack trace:
+#0 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(281): Swift_Transport_AbstractSmtpTransport->_assertResponseCode('550 SMTP AUTH i...', Array)
+#1 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/EsmtpTransport.php(245): Swift_Transport_AbstractSmtpTransport->executeCommand('DATA??', Array, Array)
+#2 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(321): Swift_Transport_EsmtpTransport->executeCommand('DATA??', Array)
+#3 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(432): Swift_Transport_AbstractSmtpTransport->_doDataCommand()
+#4 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(449): Swift_Transport_AbstractSmtpTransport->_doMailTransaction(Object(Swift_Message), 'info@mentormarm...', Array, Array)
+#5 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(176): Swift_Transport_AbstractSmtpTransport->_sendTo(Object(Swift_Message), 'info@mentormarm...', Array, Array)
+#6 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php(86): Swift_Transport_AbstractSmtpTransport->send(Object(Swift_Message), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(291): Swift_Mailer->send(Object(Swift_Message))
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(120): Illuminate\Mail\Mailer->sendSwiftMessage(Object(Swift_Message))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(212): Illuminate\Mail\Mailer->send('emails.newanswe...', Array, Object(Closure))
+#10 /var/www/mentor/app/controllers/AnswerController.php(59): Illuminate\Support\Facades\Facade::__callStatic('send', Array)
+#11 /var/www/mentor/app/controllers/AnswerController.php(59): Illuminate\Support\Facades\Mail::send('emails.newanswe...', Array, Object(Closure))
+#12 [internal function]: AnswerController->save()
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('save', Array)
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'save', Array)
+#16 [internal function]: Illuminate\Routing\{closure}()
+#17 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#18 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#19 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-12-16 12:47:36] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php:1429
+Stack trace:
+#0 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-12-16 12:47:42] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php:1429
+Stack trace:
+#0 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-12-16 12:49:00] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\NotFoundHttpException' in /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php:1429
+Stack trace:
+#0 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\ResourceNotFoundException))
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2013-12-16 13:09:11] log.ERROR: exception 'InvalidArgumentException' with message 'Unknown action [UserController@newAccountSave].' in /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:263
+Stack trace:
+#0 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Html/FormBuilder.php(825): Illuminate\Routing\UrlGenerator->action('UserController@...')
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Html/FormBuilder.php(774): Illuminate\Html\FormBuilder->getControllerAction('UserController@...')
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Html/FormBuilder.php(109): Illuminate\Html\FormBuilder->getAction(Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(206): Illuminate\Html\FormBuilder->open(Array)
+#4 /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf(22): Illuminate\Support\Facades\Facade::__callStatic('open', Array)
+#5 /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf(22): Illuminate\Support\Facades\Form::open(Array)
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(38): include('/var/www/mentor...')
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('/var/www/mentor...', Array)
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(100): Illuminate\View\Engines\CompilerEngine->get('/var/www/mentor...', Array)
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(81): Illuminate\View\View->getContents()
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Http/Response.php(70): Illuminate\View\View->render()
+#11 /var/www/mentor/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#12 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'newAccount', Object(Illuminate\View\View))
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'newAccount', Array)
+#16 [internal function]: Illuminate\Routing\{closure}()
+#17 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#18 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#19 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-12-16 13:18:06] log.ERROR: exception 'ErrorException' with message 'Invalid argument supplied for foreach()' in /var/www/mentor/vendor/laravel/framework/src/Illuminate/Html/FormBuilder.php:410
+Stack trace:
+#0 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Html/FormBuilder.php(410): Illuminate\Exception\Handler->handleError(2, 'Invalid argumen...', '/var/www/mentor...', 410, Array)
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(212): Illuminate\Html\FormBuilder->select('username', '', Array)
+#2 /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf(26): Illuminate\Support\Facades\Facade::__callStatic('select', Array)
+#3 /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf(26): Illuminate\Support\Facades\Form::select('username', '', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(38): include('/var/www/mentor...')
+#5 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('/var/www/mentor...', Array)
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(100): Illuminate\View\Engines\CompilerEngine->get('/var/www/mentor...', Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(81): Illuminate\View\View->getContents()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Http/Response.php(70): Illuminate\View\View->render()
+#9 /var/www/mentor/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#11 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#12 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'newAccount', Object(Illuminate\View\View))
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'newAccount', Array)
+#14 [internal function]: Illuminate\Routing\{closure}()
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#16 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#17 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#18 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#19 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#20 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#21 {main} [] []
+[2013-12-16 13:21:18] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<', expecting ')'' in /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf:29
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 13:21:25] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<', expecting ')'' in /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf:29
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 13:21:58] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<', expecting ')'' in /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf:29
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 13:22:01] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<', expecting ')'' in /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf:29
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 13:22:21] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<', expecting ')'' in /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf:29
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 13:22:46] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<', expecting ')'' in /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf:29
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 13:22:51] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<', expecting ')'' in /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf:29
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 13:23:37] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<', expecting ')'' in /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf:30
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 13:29:12] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<', expecting ')'' in /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf:30
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 13:29:50] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected '<'' in /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf:30
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 13:43:56] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/storage/views/0884984ef272104dbd75a343e9a29254:64
+Stack trace:
+#0 /var/www/mentor/app/storage/views/0884984ef272104dbd75a343e9a29254(64): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 64, Array)
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(38): include('/var/www/mentor...')
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('/var/www/mentor...', Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(100): Illuminate\View\Engines\CompilerEngine->get('/var/www/mentor...', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(81): Illuminate\View\View->getContents()
+#5 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Http/Response.php(70): Illuminate\View\View->render()
+#6 /var/www/mentor/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getQandA', Object(Illuminate\View\View))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getQandA', Array)
+#11 [internal function]: Illuminate\Routing\{closure}()
+#12 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#16 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#17 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2013-12-16 13:44:06] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/storage/views/0884984ef272104dbd75a343e9a29254:64
+Stack trace:
+#0 /var/www/mentor/app/storage/views/0884984ef272104dbd75a343e9a29254(64): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 64, Array)
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(38): include('/var/www/mentor...')
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('/var/www/mentor...', Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(100): Illuminate\View\Engines\CompilerEngine->get('/var/www/mentor...', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(81): Illuminate\View\View->getContents()
+#5 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Http/Response.php(70): Illuminate\View\View->render()
+#6 /var/www/mentor/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getQandA', Object(Illuminate\View\View))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getQandA', Array)
+#11 [internal function]: Illuminate\Routing\{closure}()
+#12 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#16 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#17 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2013-12-16 13:53:15] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/storage/views/0884984ef272104dbd75a343e9a29254:64
+Stack trace:
+#0 /var/www/mentor/app/storage/views/0884984ef272104dbd75a343e9a29254(64): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 64, Array)
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(38): include('/var/www/mentor...')
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('/var/www/mentor...', Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(100): Illuminate\View\Engines\CompilerEngine->get('/var/www/mentor...', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(81): Illuminate\View\View->getContents()
+#5 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Http/Response.php(70): Illuminate\View\View->render()
+#6 /var/www/mentor/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getQandA', Object(Illuminate\View\View))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getQandA', Array)
+#11 [internal function]: Illuminate\Routing\{closure}()
+#12 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#16 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#17 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2013-12-16 13:53:51] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/storage/views/0884984ef272104dbd75a343e9a29254:64
+Stack trace:
+#0 /var/www/mentor/app/storage/views/0884984ef272104dbd75a343e9a29254(64): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 64, Array)
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(38): include('/var/www/mentor...')
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('/var/www/mentor...', Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(100): Illuminate\View\Engines\CompilerEngine->get('/var/www/mentor...', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(81): Illuminate\View\View->getContents()
+#5 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Http/Response.php(70): Illuminate\View\View->render()
+#6 /var/www/mentor/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getQandA', Object(Illuminate\View\View))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getQandA', Array)
+#11 [internal function]: Illuminate\Routing\{closure}()
+#12 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#16 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#17 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2013-12-16 13:54:48] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/storage/views/0884984ef272104dbd75a343e9a29254:64
+Stack trace:
+#0 /var/www/mentor/app/storage/views/0884984ef272104dbd75a343e9a29254(64): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 64, Array)
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(38): include('/var/www/mentor...')
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('/var/www/mentor...', Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(100): Illuminate\View\Engines\CompilerEngine->get('/var/www/mentor...', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(81): Illuminate\View\View->getContents()
+#5 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Http/Response.php(70): Illuminate\View\View->render()
+#6 /var/www/mentor/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getQandA', Object(Illuminate\View\View))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getQandA', Array)
+#11 [internal function]: Illuminate\Routing\{closure}()
+#12 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#16 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#17 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2013-12-16 13:54:51] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/storage/views/0884984ef272104dbd75a343e9a29254:64
+Stack trace:
+#0 /var/www/mentor/app/storage/views/0884984ef272104dbd75a343e9a29254(64): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 64, Array)
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(38): include('/var/www/mentor...')
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('/var/www/mentor...', Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(100): Illuminate\View\Engines\CompilerEngine->get('/var/www/mentor...', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(81): Illuminate\View\View->getContents()
+#5 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Http/Response.php(70): Illuminate\View\View->render()
+#6 /var/www/mentor/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'getQandA', Object(Illuminate\View\View))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'getQandA', Array)
+#11 [internal function]: Illuminate\Routing\{closure}()
+#12 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#16 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#17 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#18 {main} [] []
+[2013-12-16 14:13:43] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected T_DOUBLE_ARROW' in /var/www/mentor/app/storage/views/0861ac13038d7bc9bea6a7838c2e6ecf:33
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 14:26:37] log.ERROR: exception 'ErrorException' with message 'Undefined index: user_type' in /var/www/mentor/app/controllers/UserController.php:97
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(97): Illuminate\Exception\Handler->handleError(8, 'Undefined index...', '/var/www/mentor...', 97, Array)
+#1 [internal function]: UserController->newAccountSave()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('newAccountSave', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'newAccountSave', Array)
+#5 [internal function]: Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2013-12-16 14:27:05] log.ERROR: exception 'ErrorException' with message 'Undefined index: email' in /var/www/mentor/app/controllers/UserController.php:103
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(103): Illuminate\Exception\Handler->handleError(8, 'Undefined index...', '/var/www/mentor...', 103, Array)
+#1 [internal function]: UserController->newAccountSave()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('newAccountSave', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'newAccountSave', Array)
+#5 [internal function]: Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2013-12-16 14:28:07] log.ERROR: exception 'ErrorException' with message 'Undefined index: class' in /var/www/mentor/app/controllers/UserController.php:104
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(104): Illuminate\Exception\Handler->handleError(8, 'Undefined index...', '/var/www/mentor...', 104, Array)
+#1 [internal function]: UserController->newAccountSave()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('newAccountSave', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'newAccountSave', Array)
+#5 [internal function]: Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2013-12-16 14:49:58] log.ERROR: exception 'InvalidArgumentException' with message 'Unknown action [UserController@accountSave].' in /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:263
+Stack trace:
+#0 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Html/FormBuilder.php(825): Illuminate\Routing\UrlGenerator->action('UserController@...')
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Html/FormBuilder.php(774): Illuminate\Html\FormBuilder->getControllerAction('UserController@...')
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Html/FormBuilder.php(109): Illuminate\Html\FormBuilder->getAction(Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(206): Illuminate\Html\FormBuilder->open(Array)
+#4 /var/www/mentor/app/storage/views/628aef2740452efee96fb8cdc5a93afd(24): Illuminate\Support\Facades\Facade::__callStatic('open', Array)
+#5 /var/www/mentor/app/storage/views/628aef2740452efee96fb8cdc5a93afd(24): Illuminate\Support\Facades\Form::open(Array)
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/PhpEngine.php(38): include('/var/www/mentor...')
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php(45): Illuminate\View\Engines\PhpEngine->evaluatePath('/var/www/mentor...', Array)
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(100): Illuminate\View\Engines\CompilerEngine->get('/var/www/mentor...', Array)
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/View/View.php(81): Illuminate\View\View->getContents()
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Http/Response.php(70): Illuminate\View\View->render()
+#11 /var/www/mentor/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/Response.php(141): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#12 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1414): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(156): Illuminate\Routing\Router->prepare(Object(Illuminate\View\View), Object(Illuminate\Http\Request))
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(126): Illuminate\Routing\Controllers\Controller->processResponse(Object(Illuminate\Routing\Router), 'account', Object(Illuminate\View\View))
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'account', Array)
+#16 [internal function]: Illuminate\Routing\{closure}('8')
+#17 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#18 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#19 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#20 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#21 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#22 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#23 {main} [] []
+[2013-12-16 14:50:36] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected $end' in /var/www/mentor/app/routes.php:37
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 14:50:50] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected $end' in /var/www/mentor/app/routes.php:37
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 14:50:55] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected $end' in /var/www/mentor/app/routes.php:37
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 14:51:29] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected $end' in /var/www/mentor/app/routes.php:37
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 14:51:30] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected $end' in /var/www/mentor/app/routes.php:37
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 14:59:53] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting T_STRING or T_VARIABLE or '{' or '$'' in /var/www/mentor/app/controllers/UserController.php:68
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2013-12-16 15:01:52] log.ERROR: exception 'ErrorException' with message 'Undefined property: stdClass::$mentee_id' in /var/www/mentor/app/controllers/UserController.php:70
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(70): Illuminate\Exception\Handler->handleError(8, 'Undefined prope...', '/var/www/mentor...', 70, Array)
+#1 [internal function]: UserController->deleteUser('9')
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('deleteUser', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'deleteUser', Array)
+#5 [internal function]: Illuminate\Routing\{closure}('9')
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2013-12-16 16:43:11] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/controllers/UserController.php:67
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(67): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 67, Array)
+#1 [internal function]: UserController->deleteUser('9')
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('deleteUser', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'deleteUser', Array)
+#5 [internal function]: Illuminate\Routing\{closure}('9')
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2013-12-16 16:43:30] log.ERROR: exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'where clause'' in /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php:351
+Stack trace:
+#0 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(351): PDO->prepare('delete from `qu...')
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(521): Illuminate\Database\{closure}(Object(Illuminate\Database\MySqlConnection), 'delete from `qu...', Array)
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(356): Illuminate\Database\Connection->run('delete from `qu...', Array, Object(Closure))
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(313): Illuminate\Database\Connection->affectingStatement('delete from `qu...', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(1511): Illuminate\Database\Connection->delete('delete from `qu...', Array)
+#5 /var/www/mentor/app/controllers/UserController.php(68): Illuminate\Database\Query\Builder->delete()
+#6 [internal function]: UserController->deleteUser('6')
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('deleteUser', Array)
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'deleteUser', Array)
+#10 [internal function]: Illuminate\Routing\{closure}('6')
+#11 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#12 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#17 {main}
+
+Next exception 'Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'where clause' (SQL: delete from `questions` where `0` = ?) (Bindings: array (
+  0 => '6',
+))' in /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php:556
+Stack trace:
+#0 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(529): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'delete from `qu...', Array)
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(356): Illuminate\Database\Connection->run('delete from `qu...', Array, Object(Closure))
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(313): Illuminate\Database\Connection->affectingStatement('delete from `qu...', Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(1511): Illuminate\Database\Connection->delete('delete from `qu...', Array)
+#4 /var/www/mentor/app/controllers/UserController.php(68): Illuminate\Database\Query\Builder->delete()
+#5 [internal function]: UserController->deleteUser('6')
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('deleteUser', Array)
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'deleteUser', Array)
+#9 [internal function]: Illuminate\Routing\{closure}('6')
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#11 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#12 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#15 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#16 {main} [] []

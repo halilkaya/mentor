@@ -1,0 +1,105 @@
+
+<?php $__env->startSection('content'); ?>
+
+<!-- Get language Begin -->
+<?php if (Session::get('lang')): ?>
+	<?php echo App::setLocale(Session::get('lang')); ?>
+<?php else: ?>
+	<?php echo App::setLocale('tr'); ?>
+<?php endif; ?>
+<!-- Get language End -->
+
+<div style="height:45px"></div>
+
+<?php if (Session::has('error')): ?>
+	<?php if (Session::get('error')=='err1'): ?>
+		<div class="alert alert-danger"><?php echo Lang::get('messages.enter_password_again'); ?></div>
+	<?php elseif (Session::get('error')=='err2'): ?>
+		<div class="alert alert-danger"><?php echo Lang::get('messages.passwords_not_same'); ?></div>
+	<?php elseif (Session::get('error')=='err3'): ?>
+		<div class="alert alert-danger"><?php echo Lang::get('messages.profile_update_error'); ?></div>
+	<?php else: ?>
+		<div class="alert alert-danger"><?php echo Session::get('error'); ?></div>
+	<?php endif; ?>
+<?php endif; ?>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			<b><?php echo Lang::get('messages.my_profile'); ?></b>
+		</h3>
+	</div>
+	<div class="panel-body">
+
+		<div class="alert alert-warning">
+			<?php echo Lang::get('messages.profile_update_warning'); ?>
+		</div>
+		
+		<?php echo Form::open(array('action' => 'UserController@saveProfile')); ?>
+
+		<table class="table table-hover">
+			<tr>
+				<td><span class="glyphicon glyphicon-user" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.my_username'); ?></b></td>
+				<td><?php echo Form::text('username', Session::get('user')->username, array('placeholder' => Lang::get('messages.my_username'), 'class' => 'form-control', 'style' => '', 'disabled')); ?></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><small><i><?php echo Lang::get('messages.change_password_info'); ?></i></small></td>
+			</tr>
+			<tr>
+				<td><span class="glyphicon glyphicon-lock" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.my_password'); ?></b></td>
+				<td><?php echo Form::password('password', array('placeholder' => Lang::get('messages.my_password'), 'class' => 'form-control', 'style' => '')); ?></td>
+			</tr>
+			<tr>
+				<td><span class="glyphicon glyphicon-lock" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.my_password_again'); ?></b></td>
+				<td><?php echo Form::password('password_again', array('placeholder' => Lang::get('messages.my_password_again'), 'class' => 'form-control', 'style' => '')); ?></td>
+			</tr>
+			<tr>
+				<td><span class="glyphicon glyphicon-user" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.my_name'); ?></b> <font color="red">*</font></td>
+				<td><?php echo Form::text('name', Session::get('user')->name, array('placeholder' => Lang::get('messages.my_name'), 'class' => 'form-control', 'style' => '')); ?></td>
+			</tr>
+			<tr>
+				<td><span class="glyphicon glyphicon-user" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.my_surname'); ?></b> <font color="red">*</font></td>
+				<td><?php echo Form::text('surname', Session::get('user')->surname, array('placeholder' => Lang::get('messages.my_surname'), 'class' => 'form-control', 'style' => '')); ?></td>
+			</tr>
+			<tr>
+				<td><span class="glyphicon glyphicon-book" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.my_department'); ?> <font color="red">*</font></b></td>
+				<td><?php echo Form::text('department', Session::get('user')->department, array('placeholder' => Lang::get('messages.my_department'), 'class' => 'form-control', 'style' => '')); ?></td>
+			</tr>
+			<tr>
+				<td><span class="glyphicon glyphicon-envelope" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.my_email'); ?></b> <font color="red">*</font></td>
+				<td><?php echo Form::text('email', Session::get('user')->email, array('placeholder' => Lang::get('messages.my_email'), 'class' => 'form-control', 'style' => '')); ?></td>
+			</tr>
+			<tr>
+				<td><span class="glyphicon glyphicon-bookmark" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.my_class'); ?></b> <font color="red">*</font></td>
+				<td><?php echo Form::text('class', Session::get('user')->class, array('placeholder' => Lang::get('messages.my_class'), 'class' => 'form-control', 'style' => '')); ?></td>
+			</tr>
+			<tr>
+				<td><span class="glyphicon glyphicon-time" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.my_available_time'); ?></b> <font color="red">*</font></td>
+				<td><?php echo Form::text('available_time', Session::get('user')->available_time, array('placeholder' => Lang::get('messages.my_available_time'), 'class' => 'form-control', 'style' => '')); ?></td>
+			</tr>
+			<tr>
+				<td><span class="glyphicon glyphicon-list-alt" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.my_'.Session::get('user')->user_type.'_help_topics'); ?></b> <font color="red">*</font></td>
+				<td><?php echo Form::text('help_topics', Session::get('user')->help_topics, array('placeholder' => Lang::get('messages.my_'.Session::get('user')->user_type.'_help_topics'), 'class' => 'form-control', 'style' => '')); ?></td>
+			</tr>
+			<tr>
+				<td><span class="glyphicon glyphicon-star-empty" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.my_hobbies'); ?></b></td>
+				<td><?php echo Form::text('hobbies', Session::get('user')->hobbies, array('placeholder' => Lang::get('messages.my_hobbies'), 'class' => 'form-control', 'style' => '')); ?></td>
+			</tr>
+			<tr>
+				<td><span class="glyphicon glyphicon-search" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.my_description'); ?></b></td>
+				<td><?php echo Form::textarea('description', Session::get('user')->description, array('placeholder' => Lang::get('messages.my_description'), 'class' => 'form-control readOnly', 'style' => '')); ?></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td><small><i><font color="red">*:</font> <?php echo Lang::get('messages.fields_required'); ?></i></small><br /><br /><?php echo Form::submit(Lang::get('messages.save'), array('class' => 'btn btn-primary')); ?></td>
+			</tr>
+		</table>
+
+		<?php echo Form::close(); ?>
+
+	</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

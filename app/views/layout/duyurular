@@ -1,0 +1,40 @@
+<? /*
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title" style="cursor:default">
+							<span class="glyphicon glyphicon-bullhorn" style="margin-right:10px"></span> {{Lang::get('messages.notifications')}}
+						</h3>
+					</div>
+					<div class="panel-body">
+						<ul class="nav nav-pills nav-stacked">
+
+							<?php
+	
+								$ntfUrl = "http://www.mentormarmara.com/notifications.php";
+								$getNtf = @file_get_contents($ntfUrl);
+
+								if ($getNtf) {
+
+									$ntfFirst = explode("\n", $getNtf);
+
+									for ($ni=count($ntfFirst)-1; $ni>=0; $ni--) {
+										$ntfSecond = explode(" :: ", $ntfFirst[$ni]);
+										if (Lang::get('messages.selected_language')=='tr') {
+											echo "<li><a href=\"#\" style=\"color:#555555\">&rarr; ".$ntfSecond[0]."</a></li>";
+										} elseif (Lang::get('messages.selected_language')=='en') {
+											echo "<li><a href=\"#\" style=\"color:#555555\">&rarr; ".$ntfSecond[1]."</a></li>";
+										}
+									}
+
+								} else {
+
+									echo "<div class='alert alert-danger'>".Lang::get('messages.could_not_get_notifications')."</div>";
+
+								}
+	
+							?>
+
+						</ul>
+					</div>
+				</div>
+*/ ?>

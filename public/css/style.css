@@ -1,0 +1,18 @@
+.mmNavbar {
+	background: #005e9a;
+	border-bottom: 1px solid #ffffff;
+	box-shadow: 0px 2px 5px #c0c0c0;
+	color: #ffffff;
+}
+
+.mmNavbar .active {
+	background: #003e66;
+}
+
+.mmLoginPanel {
+	width: 350px;
+}
+
+.mmFooter {
+	opacity: 0.85;
+}

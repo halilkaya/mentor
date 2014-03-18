@@ -1,0 +1,6 @@
+
+<?php $__env->startSection('content'); ?>
+	Mentors here!
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout_mentors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

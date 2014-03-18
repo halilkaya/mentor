@@ -1,0 +1,421 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"In",
+				"Input-get	Input-get"
+			],
+			[
+				"I",
+				"Input-flash	Input-flash"
+			],
+			[
+				"print",
+				"printf"
+			],
+			[
+				"Sess",
+				"Session-get	Session-get"
+			],
+			[
+				"Req",
+				"Request-is	Request-is"
+			],
+			[
+				"Requ",
+				"Request-url	Request-url"
+			],
+			[
+				"Session",
+				"Session-get	Session-get"
+			],
+			[
+				"Sessio",
+				"Session-put	Session-put"
+			],
+			[
+				"Lang",
+				"Lang-get	Lang-get"
+			],
+			[
+				"men",
+				"mentor_id"
+			],
+			[
+				"Input",
+				"Input-flush	Input-flush"
+			],
+			[
+				"pri",
+				"print_r"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"Auth",
+				"Auth-attempting	Auth-attempting"
+			],
+			[
+				"log",
+				"login_for_mentee"
+			],
+			[
+				"logi",
+				"login_for_mentor"
+			],
+			[
+				"get",
+				"getUsername"
+			],
+			[
+				"cell",
+				"cellpadding	Attr"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"vali",
+				"validation"
+			],
+			[
+				"us",
+				"user_id"
+			],
+			[
+				"back",
+				"background-repeat"
+			],
+			[
+				"backgr",
+				"background"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"bac",
+				"background-size"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"send",
+				"send_header"
+			],
+			[
+				"Bas",
+				"BaseHTTPRequestHandler"
+			],
+			[
+				"n",
+				"n"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 54.0,
+		"selected_items":
+		[
+			[
+				"blade",
+				"Set Syntax: PHP - Laravel Blade"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 575.0
+	},
+	"console":
+	{
+		"height": 139.0,
+		"history":
+		[
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/var/www/mentor/app/lang/en/messages.php",
+		"/var/www/mentor/app/lang/tr/messages.php",
+		"/var/www/mentor/app/views/home.blade.php",
+		"/var/www/mentor/app/views/layout/main.blade.php",
+		"/var/www/mentor/app/controllers/UserController.php",
+		"/var/www/mentor/app/views/my_profile.blade.php",
+		"/var/www/mentor/app/controllers/HomeController.php",
+		"/var/www/mentor/app/routes.php",
+		"/var/www/mentor/public/css/style.css",
+		"/var/www/mentorproject/app/controllers/UserController.php",
+		"/var/www/mentorproject/app/views/users.blade.php",
+		"/var/www/mentor_front/index.php",
+		"/var/www/mentor/app/views/my_mentee.blade.php",
+		"/var/www/mentor/app/views/my_mentor.blade.php",
+		"/var/www/mentor/app/config/app.php",
+		"/var/www/mentor/app/models/User.php",
+		"/home/halil/Model-user-old.php",
+		"/var/www/mentor/app/views/layout_home.blade.php",
+		"/var/www/mentor/app/lang/es/messages.php",
+		"/var/www/mentor/app/lang/en/validation.php",
+		"/var/www/mentorproject/app/routes.php",
+		"/var/www/mentor/app/database/migrations/2013_12_10_005937_update_users_table.php",
+		"/var/www/mentor/app/database/migrations/2013_12_09_222619_create_users_table.php",
+		"/var/www/mentor/index.php",
+		"/var/www/mentor/app/config/session.php",
+		"/var/www/mentor/app/database/migrations/2013_12_09_144823_create_mentor_table.php",
+		"/var/www/mentor/app/database/migrations/2013_12_09_222457_drop_mentor_table.php",
+		"/var/www/mentor/app/database/migrations/2013_12_09_222506_drop_mentee_table.php",
+		"/var/www/mentor/app/views/layout_answers.blade.php",
+		"/var/www/mentor/app/views/layout_categories.blade.php",
+		"/var/www/mentor/app/views/layout_mentees.blade.php",
+		"/var/www/mentor/app/views/layout_mentors.blade.php",
+		"/var/www/mentor/app/views/layout_questions.blade.php",
+		"/var/www/mentor/app/controllers/AnswerController.php",
+		"/var/www/mentor/app/controllers/CategoryController.php",
+		"/var/www/mentor/app/controllers/MenteeController.php",
+		"/var/www/mentor/app/controllers/QuestionController.php",
+		"/var/www/mentor/app/controllers/MentorController.php",
+		"/var/www/mentor/app/views/mentors.blade.php",
+		"/var/www/mentor/app/views/mentees.blade.php",
+		"/var/www/mentor/app/views/categories.blade.php",
+		"/var/www/mentor/app/views/questions.blade.php",
+		"/var/www/mentor/app/views/answers.blade.php",
+		"/var/www/mentorproject/app/views/layout.blade.php",
+		"/var/www/mentor/app/views/layout_mentors.php",
+		"/var/www/mentor/app/models/Mentor.php",
+		"/var/www/mentor/app/models/Mentee.php",
+		"/var/www/mentor/app/models/Category.php",
+		"/var/www/mentor/app/models/Question.php",
+		"/var/www/mentor/app/models/Answer.php",
+		"/var/www/mentor/app/database/migrations/2013_12_09_144836_create_mentee_table.php",
+		"/var/www/mentor/app/database/migrations/2013_12_09_145758_create_categories_table.php",
+		"/var/www/mentor/app/database/migrations/2013_12_09_145803_create_questions_table.php",
+		"/var/www/mentor/app/database/migrations/2013_12_09_145808_create_answers_table.php",
+		"/var/www/mentor/app/config/database.php",
+		"/var/www/mentorproject/app/controllers/PostController.php",
+		"/var/www/mentorproject/app/views/posts.blade.php",
+		"/var/www/mentorproject/app/views/newlayout.blade.php",
+		"/home/halil/Documents/FLASH_BACKUP/www/sepet/getbasket.php",
+		"/var/www/mentorproject/app/models/User.php",
+		"/var/www/mentorproject/app/models/Post.php",
+		"/var/www/mentorproject/app/database/migrations/2013_12_09_111640_create_posts_table.php",
+		"/home/halil/Documents/FLASH_BACKUP/www/garanti/index.php",
+		"/var/www/mentorproject/public/index.php",
+		"/var/www/mentorproject/app/database/migrations/2013_12_07_195715_create_users_table.php",
+		"/var/www/mentorproject/app/config/database.php",
+		"/var/www/mentorproject/bootstrap/start.php",
+		"/var/www/comeks/css/style.css",
+		"/var/www/comeks/index.php",
+		"/var/www/mvc/v/v.php",
+		"/var/www/mvc/m/m.php",
+		"/var/www/mvc/c/c.php",
+		"/var/www/mvc/index.php",
+		"/var/www/mentor/css/style.css",
+		"/home/halil/Downloads/20/bootstrap3/index.html",
+		"/home/halil/Downloads/20/bootstrap3/css/style.css",
+		"/var/www/login-page/index.php",
+		"/var/www/mentor/css/bootstrap.min.css",
+		"/var/www/mentor/js/jquery.js",
+		"/var/www/login-page/jquery.js",
+		"/var/www/login-page/bootstrap/css/bootstrap.css",
+		"/home/halil/server.py",
+		"/tmp/fz3temp-1/halil.py",
+		"/tmp/fz3temp-1/server 2.py",
+		"/tmp/fz3temp-1/server.py",
+		"/home/halil/server.html",
+		"/home/halil/tests.py",
+		"/home/halil/index_example2.html",
+		"/home/halil/Downloads/presence-master/setup.py",
+		"/home/halil/Downloads/presence-master/presence/main.py",
+		"/home/halil/Downloads/masinop/archive.php",
+		"/home/halil/Downloads/masinop/banners.php",
+		"/home/halil/Downloads/masinop/category.php",
+		"/home/halil/Downloads/masinop/comments.php",
+		"/home/halil/Downloads/masinop/functions.php",
+		"/home/halil/Downloads/masinop/header.php",
+		"/home/halil/Downloads/masinop/page.php",
+		"/home/halil/Downloads/masinop/search.php",
+		"/home/halil/Downloads/masinop/sidebar.php",
+		"/home/halil/Downloads/masinop/single.php",
+		"/home/halil/Downloads/masinop/index.php",
+		"/home/halil/first.py",
+		"/home/halil/Downloads/masinop/headerbanner.php",
+		"/home/halil/Downloads/masinop/footer.php",
+		"/var/www/mf.php",
+		"/home/halil/Documents/ANDROID_BACKUP/MyAndroidClassesBack/FlashCard/Internet.class",
+		"/home/halil/Downloads/apktool1.5.2/FlashCard/AndroidManifest.xml",
+		"/home/halil/Documents/ANDROID_BACKUP/MyAndroidClassesBack/FlashCard/R.class",
+		"/home/halil/Documents/ANDROID_BACKUP/MyAndroidClassesBack/FlashCard/BuildConfig.class",
+		"/home/halil/Documents/ANDROID_BACKUP/MyAndroidClassesBack/FlashCard/Yardim.class",
+		"/home/halil/Documents/ANDROID_BACKUP/MyAndroidClassesBack/FlashCard/Veritabani2.class",
+		"/home/halil/Documents/ANDROID_BACKUP/MyAndroidClassesBack/FlashCard/Veritabani.class",
+		"/home/halil/Documents/ANDROID_BACKUP/MyAndroidClassesBack/FlashCard/SoruCevap2.class",
+		"/home/halil/Documents/ANDROID_BACKUP/MyAndroidClassesBack/FlashCard/SoruCevap1.class",
+		"/home/halil/Documents/ANDROID_BACKUP/MyAndroidClassesBack/FlashCard/OSFW.class",
+		"/home/halil/Documents/ANDROID_BACKUP/MyAndroidClassesBack/FlashCard/KelimeGruplari.class",
+		"/home/halil/Documents/ANDROID_BACKUP/MyAndroidClassesBack/FlashCard/KelimeGetir.class",
+		"/home/halil/Documents/ANDROID_BACKUP/MyAndroidClassesBack/FlashCard/Main.class",
+		"/home/halil/Downloads/apktool1.5.2/FlashCard/res/layout/main.xml",
+		"/home/halil/Downloads/source/src/com/halilkaya/flashcard/Main.java",
+		"/home/halil/Downloads/apktool1.5.2/FlashCard/smali/com/halilkaya/flashcard/BuildConfig.smali",
+		"/home/halil/Documents/Comeks Developer",
+		"/home/halil/Downloads/apktool1.5.2/CocukTablet/res/layout/ayarlar.xml",
+		"/home/halil/Downloads/apktool1.5.2/CocukTablet/AndroidManifest.xml",
+		"/home/halil/Downloads/apktool1.5.2/CocukTablet/res/layout/main.xml",
+		"/home/halil/Downloads/CocukTablet.apk_FILES/AndroidManifest.xml",
+		"/home/halil/Downloads/CocukTablet.apk_FILES/res/menu/ayarlar.xml",
+		"/home/halil/Downloads/CocukTablet.apk_FILES/res/layout/main.xml"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"mentor_only_surname",
+			"mentor_only_name",
+			"mentorInfo",
+			"}*/\n",
+			"$user->user_type==\"mentor",
+			"__(",
+			"echo",
+			"Lang::get",
+			"<html>",
+			"older"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 217.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

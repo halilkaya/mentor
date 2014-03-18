@@ -1,0 +1,113 @@
+
+<?php $__env->startSection('content'); ?>
+
+<!-- Get language Begin -->
+<?php if (Session::get('lang')): ?>
+	<?php echo App::setLocale(Session::get('lang')); ?>
+<?php else: ?>
+	<?php echo App::setLocale('tr'); ?>
+<?php endif; ?>
+<!-- Get language End -->
+
+<div style="height:45px"></div>
+
+<?php
+	$q = DB::table('questions')->where('id', $question_id)->first();
+	$m = DB::table('users')->where('id', $q->mentee_id)->first();
+?>
+
+<center>
+	<div class="btn-group">
+		<a href="/mentor/public/question-and-answer" class="btn btn-default">&larr; <?php echo Lang::get('messages.q_title_all_questions'); ?></a>
+		<?php if ($q->isActive==1): ?>
+			<a href="/mentor/public/close-question/<?php echo $question_id; ?>/detail" class="btn btn-default"><span class="glyphicon glyphicon-ok-circle"></span> <?php echo Lang::get('messages.q_title_close_if_solved'); ?></a>
+		<?php else: ?>
+			<a href="/mentor/public/close-question/<?php echo $question_id; ?>/detail" class="btn btn-default" disabled><span class="glyphicon glyphicon-ok-circle"></span> <?php echo Lang::get('messages.q_title_close_if_solved'); ?></a>
+		<?php endif; ?>
+		<a href="/mentor/public/question/<?php echo $question_id; ?>#writeAnswer" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> <?php echo Lang::get('messages.q_title_answer'); ?></a>
+	</div>
+</center>
+
+<div style="height:15px"></div>
+
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			<span class="glyphicon glyphicon-question-sign" style="margin-right:10px"></span> <?php echo $q->title; ?>
+		</h3>
+	</div>
+	<div class="panel-body">
+		<?php
+			$viewQuestion = str_replace("\n", "<br />", $q->question);
+		?>
+		<?php echo $viewQuestion; ?>
+	</div>
+	<div class="panel-footer panel-info" style="background:#e5f4fb">
+		<small><span class="glyphicon glyphicon-user"></span> <?php echo $m->name; ?> <?php echo $m->surname; ?></small>
+		<br />
+		<?php
+			$eDateTime = explode(" ", $q->date_time);
+			$eTime = $eDateTime[1];
+			$eDate = explode("-", $eDateTime[0]);
+			$eDay = $eDate[2];
+			$eMonth = $eDate[1];
+			$eYear = $eDate[0];
+			$eRes = $eDay.'.'.$eMonth.'.'.$eYear.' '.$eTime;
+		?>
+		<small><span class="glyphicon glyphicon-calendar"></span> <?php echo $eRes; ?></small>
+	</div>
+</div>
+
+<?php
+	$answers = DB::table('answers')->where('question_id', $question_id)->orderby('id', 'desc')->get();
+?>
+
+<?php foreach ($answers as $answer): ?>
+	<div class="panel panel-default">
+		<div class="panel-body">
+			<?php
+				$viewAnswer = str_replace("\n", "<br />", $answer->answer);
+			?>
+			<?php echo $viewAnswer; ?>
+		</div>
+		<div class="panel-footer">
+			<?php
+				$aUser = DB::table('users')->where('id', $answer->user_id)->first();
+				$eDateTime = explode(" ", $answer->date_time);
+				$eTime = $eDateTime[1];
+				$eDate = explode("-", $eDateTime[0]);
+				$eDay = $eDate[2];
+				$eMonth = $eDate[1];
+				$eYear = $eDate[0];
+				$eRes = $eDay.'.'.$eMonth.'.'.$eYear.' '.$eTime;
+			?>
+			<small><span class="glyphicon glyphicon-user"></span> <?php echo $aUser->name; ?> <?php echo $aUser->surname; ?></small>
+			<br />
+			<small><span class="glyphicon glyphicon-calendar"></span> <?php echo $eRes; ?></small>
+		</div>
+	</div>
+<?php endforeach; ?>
+
+<div id="writeAnswer" style="margin-top:50px">
+	<h2 class="primary"> <?php echo Lang::get('messages.write_answer'); ?> </h2>
+
+	<?php if (Session::has('answerError')): ?>
+		<?php if (Session::get('answerError')=='err1'): ?>
+			<div class="alert alert-danger">
+				<?php echo Lang::get('messages.error_write_answer'); ?>
+			</div>
+		<?php endif; ?>
+	<?php endif; ?>
+
+	<?php echo Form::open(array('action' => 'AnswerController@save')); ?>
+		<?php echo Form::hidden('question_id', $question_id); ?>
+		<?php echo Form::hidden('user_id', Session::get('user')->id); ?>
+		<?php echo Form::textarea('answer', Input::old('answer'), array('placeholder' => Lang::get('messages.write_answer_here'), 'class' => 'form-control')); ?>
+		<center> <?php echo Form::submit(Lang::get('messages.question_send'), array('class' => 'btn btn-primary btn-lg', 'style' => 'margin-top:20px')); ?> </center>
+	<?php echo Form::close(); ?>
+</div>
+
+<div style="height:75px"></div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

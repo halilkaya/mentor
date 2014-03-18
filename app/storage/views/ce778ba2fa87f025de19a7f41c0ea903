@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+	<title>Mentors</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.min.css" />
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+
+	<?php echo $__env->yieldContent('content'); ?>
+
+</body>
+</html>

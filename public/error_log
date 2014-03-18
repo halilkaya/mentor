@@ -1,0 +1,1 @@
+[16-Feb-2014 02:08:52 UTC] PHP Fatal error:  Class 'Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler' not found in /home/mentor/public_html/mentor2/vendor/laravel/framework/src/Illuminate/Session/SessionManager.php on line 53

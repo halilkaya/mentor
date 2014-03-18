@@ -1,0 +1,11 @@
+[2013-12-10 12:42:46] log.ERROR: exception 'Exception' with message 'This PHP binary is not version 5.4 or greater.' in /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php:53
+Stack trace:
+#0 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Console/ServeCommand.php(29): Illuminate\Foundation\Console\ServeCommand->checkPhpVersion()
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Console/Command.php(108): Illuminate\Foundation\Console\ServeCommand->fire()
+#2 /var/www/mentor/vendor/symfony/console/Symfony/Component/Console/Command/Command.php(244): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Console/Command.php(96): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /var/www/mentor/vendor/symfony/console/Symfony/Component/Console/Application.php(897): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/mentor/vendor/symfony/console/Symfony/Component/Console/Application.php(191): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Foundation\Console\ServeCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/mentor/vendor/symfony/console/Symfony/Component/Console/Application.php(121): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/mentor/artisan(59): Symfony\Component\Console\Application->run()
+#8 {main} [] []

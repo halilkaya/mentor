@@ -1,0 +1,150 @@
+
+<?php $__env->startSection('content'); ?>
+
+<!-- Get language Begin -->
+<?php if (Session::get('lang')): ?>
+	<?php echo App::setLocale(Session::get('lang')); ?>
+<?php else: ?>
+	<?php echo App::setLocale('tr'); ?>
+<?php endif; ?>
+<!-- Get language End -->
+
+<div style="height:45px"></div>
+
+<div style="margin-bottom:15px" align="center">
+	<?php if (Session::get('user')->user_type=='mentee'): ?>
+		<a href="/mentor/public/ask-a-question" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-pencil" style="margin-right:10px"></span> <?php echo Lang::get('messages.ask_a_new_question'); ?></a>
+	<?php endif; ?>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			<span class="glyphicon glyphicon-question-sign" style="margin-right:10px"></span> <?php echo Lang::get('messages.question_and_answer'); ?>
+		</h3>
+	</div>
+	<div class="panel-body">
+
+		<?php
+
+			if (Session::get('user')->user_type=='mentor') {
+				$rCount = DB::table('questions')->where('mentor_id', Session::get('user')->id)->count();
+				if ($rCount<=0) {
+					echo '<div class="alert alert-danger">'.Lang::get('messages.no_question_found_for_mentor_main').'</div>';
+				} else {
+					$questions = DB::table('questions')->where('mentor_id', Session::get('user')->id)->orderBy('id', 'desc')->get();
+					$c = 1;
+
+		?>
+
+		<table class="table table-hover">
+			<tr>
+				<th><?php echo Lang::get('messages.q_title_count'); ?></th>
+				<th><?php echo Lang::get('messages.q_title_date'); ?></th>
+				<th><?php echo Lang::get('messages.q_title_question'); ?></th>
+				<th><?php echo Lang::get('messages.q_title_mentee'); ?></th>
+				<th><?php echo Lang::get('messages.q_title_status'); ?></th>
+				<th><?php echo Lang::get('messages.q_title_action'); ?></th>
+			</tr>
+			<?php foreach ($questions as $question): ?>
+			<?php $getMentee = DB::table('users')->where('id', $question->mentee_id)->first(); ?>
+			<tr>
+				<td><b><?php echo $c; ?></b></td>
+				<?php
+					$eDateTime = explode(" ", $question->date_time);
+					$eTime = $eDateTime[1];
+					$eDate = explode("-", $eDateTime[0]);
+					$eDay = $eDate[2];
+					$eMonth = $eDate[1];
+					$eYear = $eDate[0];
+					$eRes = $eDay.'.'.$eMonth.'.'.$eYear.' '.$eTime;
+				?>
+				<td><?php echo $eRes; ?></td>
+				<td><a href="/mentor/public/question/<?php echo $question->id; ?>"><?php echo $question->title; ?></a></td>
+				<td><?php echo $getMentee->name; ?> <?php echo $getMentee->surname; ?></td>
+				<?php if ($question->isActive==0): ?>
+					<td><?php echo Lang::get('messages.q_title_closed'); ?></td>
+				<?php else: ?>
+					<td style='color:green'><?php echo Lang::get('messages.q_title_active'); ?></td>
+				<?php endif; ?>
+				<td>
+					<a href="/mentor/public/question/<?php echo $question->id; ?>#writeAnswer" class="btn btn-primary btn-xs"><?php echo Lang::get('messages.q_title_answer'); ?></a>
+					<?php if ($question->isActive==0): ?>
+						<a href="/mentor/public/close-question/<?php echo $question->id; ?>/list" class="btn btn-danger btn-xs" disabled><?php echo Lang::get('messages.q_title_close'); ?></a>
+					<?php else: ?>
+						<a href="/mentor/public/close-question/<?php echo $question->id; ?>/list" class="btn btn-danger btn-xs"><?php echo Lang::get('messages.q_title_close'); ?></a>
+					<?php endif; ?>
+				</td>
+			</tr>
+			<?php $c++; ?>
+			<?php endforeach; ?>
+		</table>
+
+		<?php
+
+				}
+			} elseif (Session::get('user')->user_type=='mentee') {
+				$eCount = DB::table('questions')->where('mentee_id', Session::get('user')->id)->count();
+				if ($eCount<=0) {
+					echo '<div class="alert alert-warning">'.Lang::get('messages.no_question_found_for_mentee_main').'</div>';
+				} else {
+					$questions = DB::table('questions')->where('mentee_id', Session::get('user')->id)->orderBy('id', 'desc')->get();
+					$c = 1;
+
+		?>
+
+		<table class="table table-hover">
+			<tr>
+				<th><?php echo Lang::get('messages.q_title_count'); ?></th>
+				<th><?php echo Lang::get('messages.q_title_date'); ?></th>
+				<th><?php echo Lang::get('messages.q_title_question'); ?></th>
+				<th><?php echo Lang::get('messages.q_title_status'); ?></th>
+				<th><?php echo Lang::get('messages.q_title_action'); ?></th>
+			</tr>
+			<?php foreach ($questions as $question): ?>
+			<?php $getMentee = DB::table('users')->where('id', $question->mentee_id)->first(); ?>
+			<tr>
+				<td><b><?php echo $c; ?></b></td>
+				<?php
+					$eDateTime = explode(" ", $question->date_time);
+					$eTime = $eDateTime[1];
+					$eDate = explode("-", $eDateTime[0]);
+					$eDay = $eDate[2];
+					$eMonth = $eDate[1];
+					$eYear = $eDate[0];
+					$eRes = $eDay.'.'.$eMonth.'.'.$eYear.' '.$eTime;
+				?>
+				<td><?php echo $eRes; ?></td>
+				<td><a href="/mentor/public/question/<?php echo $question->id; ?>"><?php echo $question->title; ?></a></td>
+				<?php if ($question->isActive==0): ?>
+					<td><?php echo Lang::get('messages.q_title_closed'); ?></td>
+				<?php else: ?>
+					<td style='color:green'><?php echo Lang::get('messages.q_title_active'); ?></td>
+				<?php endif; ?>
+				<td>
+					<a href="/mentor/public/question/<?php echo $question->id; ?>#writeAnswer" class="btn btn-primary btn-xs"><?php echo Lang::get('messages.q_title_answer'); ?></a>
+					<?php if ($question->isActive==0): ?>
+						<a href="/mentor/public/close-question/<?php echo $question->id; ?>/list" class="btn btn-danger btn-xs" disabled><?php echo Lang::get('messages.q_title_close'); ?></a>
+					<?php else: ?>
+						<a href="/mentor/public/close-question/<?php echo $question->id; ?>/list" class="btn btn-danger btn-xs"><?php echo Lang::get('messages.q_title_close'); ?></a>
+					<?php endif; ?>
+				</td>
+			</tr>
+			<?php $c++; ?>
+			<?php endforeach; ?>
+		</table>
+
+		<?php
+
+				}
+			}
+
+		?>
+
+	</div>
+</div>
+
+<div style="height:75px"></div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

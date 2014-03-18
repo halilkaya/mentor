@@ -1,0 +1,230 @@
+[2014-02-15 23:06:50] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Resource' not found' in /var/www/mentor/app/controllers/UserController.php:389
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-02-15 23:18:56] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in /var/www/mentor/app/controllers/UserController.php:427
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-02-15 23:19:04] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in /var/www/mentor/app/controllers/UserController.php:427
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-02-15 23:19:52] log.ERROR: exception 'Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException' in /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php:1439
+Stack trace:
+#0 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1050): Illuminate\Routing\Router->handleRoutingException(Object(Symfony\Component\Routing\Exception\MethodNotAllowedException))
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1014): Illuminate\Routing\Router->findRoute(Object(Illuminate\Http\Request))
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#4 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#5 {main} [] []
+[2014-02-15 23:20:32] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/controllers/UserController.php:425
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(425): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 425, Array)
+#1 [internal function]: UserController->apiDelete()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiDelete', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiDelete', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-02-15 23:21:25] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/controllers/UserController.php:425
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(425): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 425, Array)
+#1 [internal function]: UserController->apiDelete()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiDelete', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiDelete', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-02-15 23:22:34] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/controllers/UserController.php:425
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(425): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 425, Array)
+#1 [internal function]: UserController->apiDelete()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiDelete', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiDelete', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-02-15 23:25:00] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/controllers/UserController.php:425
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(425): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 425, Array)
+#1 [internal function]: UserController->apiDelete()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiDelete', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiDelete', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-02-15 23:25:53] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/controllers/UserController.php:425
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(425): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 425, Array)
+#1 [internal function]: UserController->apiDelete()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiDelete', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiDelete', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-02-15 23:35:27] log.ERROR: exception 'ErrorException' with message 'Undefined property: stdClass::$user_type' in /var/www/mentor/app/controllers/UserController.php:437
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(437): Illuminate\Exception\Handler->handleError(8, 'Undefined prope...', '/var/www/mentor...', 437, Array)
+#1 [internal function]: UserController->apiPut()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiPut', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiPut', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-02-15 23:39:34] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/controllers/UserController.php:437
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(437): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 437, Array)
+#1 [internal function]: UserController->apiPut()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiPut', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiPut', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-02-15 23:40:08] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/controllers/UserController.php:437
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(437): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 437, Array)
+#1 [internal function]: UserController->apiPut()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiPut', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiPut', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-02-15 23:41:32] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/controllers/UserController.php:473
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(473): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 473, Array)
+#1 [internal function]: UserController->apiPut()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiPut', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiPut', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-02-15 23:43:49] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/controllers/UserController.php:473
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(473): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 473, Array)
+#1 [internal function]: UserController->apiPut()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiPut', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiPut', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-02-15 23:44:37] log.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in /var/www/mentor/app/controllers/UserController.php:437
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(437): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', '/var/www/mentor...', 437, Array)
+#1 [internal function]: UserController->apiPut()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiPut', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiPut', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-02-15 23:45:54] log.ERROR: exception 'ErrorException' with message 'Undefined property: stdClass::$password' in /var/www/mentor/app/controllers/UserController.php:443
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(443): Illuminate\Exception\Handler->handleError(8, 'Undefined prope...', '/var/www/mentor...', 443, Array)
+#1 [internal function]: UserController->apiPut()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiPut', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiPut', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-02-15 23:51:40] log.ERROR: exception 'ErrorException' with message 'Undefined variable: getUser' in /var/www/mentor/app/controllers/UserController.php:428
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(428): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/var/www/mentor...', 428, Array)
+#1 [internal function]: UserController->apiDelete()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiDelete', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiDelete', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []
+[2014-02-15 23:54:43] log.ERROR: exception 'ErrorException' with message 'Undefined variable: data2' in /var/www/mentor/app/controllers/UserController.php:415
+Stack trace:
+#0 /var/www/mentor/app/controllers/UserController.php(415): Illuminate\Exception\Handler->handleError(8, 'Undefined varia...', '/var/www/mentor...', 415, Array)
+#1 [internal function]: UserController->apiPost()
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('apiPost', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'apiPost', Array)
+#5 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}()
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#11 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#12 {main} [] []

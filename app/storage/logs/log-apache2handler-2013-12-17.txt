@@ -1,0 +1,64 @@
+[2013-12-17 13:00:15] log.ERROR: exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'where clause'' in /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php:351
+Stack trace:
+#0 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(351): PDO->prepare('delete from `qu...')
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(521): Illuminate\Database\{closure}(Object(Illuminate\Database\MySqlConnection), 'delete from `qu...', Array)
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(356): Illuminate\Database\Connection->run('delete from `qu...', Array, Object(Closure))
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(313): Illuminate\Database\Connection->affectingStatement('delete from `qu...', Array)
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(1511): Illuminate\Database\Connection->delete('delete from `qu...', Array)
+#5 /var/www/mentor/app/controllers/UserController.php(68): Illuminate\Database\Query\Builder->delete()
+#6 [internal function]: UserController->deleteUser('10')
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('deleteUser', Array)
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'deleteUser', Array)
+#10 [internal function]: Illuminate\Routing\{closure}('10')
+#11 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#12 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#16 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#17 {main}
+
+Next exception 'Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column '0' in 'where clause' (SQL: delete from `questions` where `0` = ?) (Bindings: array (
+  0 => '10',
+))' in /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php:556
+Stack trace:
+#0 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(529): Illuminate\Database\Connection->handleQueryException(Object(PDOException), 'delete from `qu...', Array)
+#1 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(356): Illuminate\Database\Connection->run('delete from `qu...', Array, Object(Closure))
+#2 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Connection.php(313): Illuminate\Database\Connection->affectingStatement('delete from `qu...', Array)
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(1511): Illuminate\Database\Connection->delete('delete from `qu...', Array)
+#4 /var/www/mentor/app/controllers/UserController.php(68): Illuminate\Database\Query\Builder->delete()
+#5 [internal function]: UserController->deleteUser('10')
+#6 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#7 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('deleteUser', Array)
+#8 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'deleteUser', Array)
+#9 [internal function]: Illuminate\Routing\{closure}('10')
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#11 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#12 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#15 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#16 {main} [] []
+[2013-12-17 13:35:55] log.ERROR: exception 'Swift_TransportException' with message 'Connection could not be established with host mail.mentormarmara.com [php_network_getaddresses: getaddrinfo failed: Name or service not known #0]' in /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php:259
+Stack trace:
+#0 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/StreamBuffer.php(64): Swift_Transport_StreamBuffer->_establishSocketConnection()
+#1 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php(115): Swift_Transport_StreamBuffer->initialize(Array)
+#2 /var/www/mentor/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Mailer.php(80): Swift_Transport_AbstractSmtpTransport->start()
+#3 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(291): Swift_Mailer->send(Object(Swift_Message))
+#4 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Mail/Mailer.php(120): Illuminate\Mail\Mailer->sendSwiftMessage(Object(Swift_Message))
+#5 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(212): Illuminate\Mail\Mailer->send('emails.newquest...', Array, Object(Closure))
+#6 /var/www/mentor/app/controllers/QuestionController.php(113): Illuminate\Support\Facades\Facade::__callStatic('send', Array)
+#7 /var/www/mentor/app/controllers/QuestionController.php(113): Illuminate\Support\Facades\Mail::send('emails.newquest...', Array, Object(Closure))
+#8 [internal function]: QuestionController->save()
+#9 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(138): call_user_func_array(Array, Array)
+#10 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Controllers/Controller.php(115): Illuminate\Routing\Controllers\Controller->callMethod('save', Array)
+#11 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(985): Illuminate\Routing\Controllers\Controller->callAction(Object(Illuminate\Foundation\Application), Object(Illuminate\Routing\Router), 'save', Array)
+#12 [internal function]: Illuminate\Routing\{closure}()
+#13 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(80): call_user_func_array(Object(Closure), Array)
+#14 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Route.php(47): Illuminate\Routing\Route->callCallable()
+#15 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Routing/Router.php(1016): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#16 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(576): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 /var/www/mentor/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(552): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 /var/www/mentor/public/index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []

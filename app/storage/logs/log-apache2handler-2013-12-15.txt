@@ -1,0 +1,4 @@
+[2013-12-15 23:12:42] log.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected T_ELSEIF' in /var/www/mentor/app/storage/views/193ce241c4710caab7fb878b339c2522:25
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []

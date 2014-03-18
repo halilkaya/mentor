@@ -1,0 +1,69 @@
+
+<?php $__env->startSection('content'); ?>
+
+<!-- Get language Begin -->
+<?php if (Session::get('lang')): ?>
+	<?php echo App::setLocale(Session::get('lang')); ?>
+<?php else: ?>
+	<?php echo App::setLocale('tr'); ?>
+<?php endif; ?>
+<!-- Get language End -->
+
+<div style="height:45px"></div>
+
+<?php $acc = DB::table('users')->where('id', $account_id)->first(); ?>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			<span class="glyphicon glyphicon-pencil" style="margin-right:10px"></span> Hesap Bilgileri ve Düzenleme
+		</h3>
+	</div>
+	<div class="panel-body">
+		
+		<?php echo Form::open(array('action' => 'UserController@accountSave')); ?>
+			<?php echo Form::hidden('id', $acc->id); ?>
+			<b>Hesap Tipi:</b> &nbsp; 
+
+			<?php if ($acc->user_type=='mentor'): ?>
+				<?php echo Form::radio('user_type', 'mentor', true); ?> Mentor &nbsp; 
+				<?php echo Form::radio('user_type', 'mentee', false); ?> Mentee <br /><br />
+			<?php elseif ($acc->user_type=='mentee'): ?>
+				<?php echo Form::radio('user_type', 'mentor', false); ?> Mentor &nbsp; 
+				<?php echo Form::radio('user_type', 'mentee', true); ?> Mentee <br /><br />
+			<?php endif; ?>
+
+			<b>Mentörü:</b> &nbsp; 
+			<?php $mentors = DB::table('users')->where('user_type', 'mentor')->whereNotIn('username', array('admin'))->get(); ?>
+
+			<?php
+				$allmentors = array();
+				foreach ($mentors as $mentor) {
+					$allmentors[$mentor->id] = $mentor->id.' - '.$mentor->name.' '.$mentor->surname;
+				}
+			?>
+
+			<?php echo Form::select('mentor_id', $allmentors); ?> &nbsp; <small><i>(Hesap tipini <b>mentor</b> olarak seçtiğinizde bu kısım işleme alınmayacaktır.)</i></small><br /><br />
+			
+			<?php echo Form::text('username', $acc->username, array('placeholder' => 'Kullanıcı adı (gerekli)', 'class' => 'form-control', 'style' => 'margin-bottom:15px')); ?>
+			<small><i>Şifreyi değiştirmek istemiyorsanız bu alanı boş bırakın.</i></small>
+			<?php echo Form::password('password', array('placeholder' => 'Şifre (gerekli)', 'class' => 'form-control', 'style' => 'margin-bottom:15px')); ?>
+			<?php echo Form::text('name', $acc->name, array('placeholder' => 'Adı (gerekli)', 'class' => 'form-control', 'style' => 'margin-bottom:15px')); ?>
+			<?php echo Form::text('surname', $acc->surname, array('placeholder' => 'Soyadı (gerekli)', 'class' => 'form-control', 'style' => 'margin-bottom:15px')); ?>
+			<?php echo Form::text('department', $acc->department, array('placeholder' => 'Bölümü (gerekli)', 'class' => 'form-control', 'style' => 'margin-bottom:15px')); ?>
+			<?php echo Form::text('email', $acc->email, array('placeholder' => 'E-mail adresi (gerekli)', 'class' => 'form-control', 'style' => 'margin-bottom:15px')); ?>
+			<?php echo Form::text('class', $acc->class, array('placeholder' => 'Sınıfı (gerekli)', 'class' => 'form-control', 'style' => 'margin-bottom:15px')); ?>
+			<?php echo Form::text('available_time', $acc->available_time, array('placeholder' => 'Uygun zamanları (gerekli)', 'class' => 'form-control', 'style' => 'margin-bottom:15px')); ?>
+			<?php echo Form::textarea('help_topics', $acc->help_topics, array('placeholder' => 'Yardım konuları (gerekli)', 'class' => 'form-control', 'style' => 'margin-bottom:15px')); ?>
+			<?php echo Form::textarea('hobbies', $acc->hobbies, array('placeholder' => 'Hobi ve ilgi alanları', 'class' => 'form-control', 'style' => 'margin-bottom:15px')); ?>
+			<?php echo Form::text('description', $acc->description, array('placeholder' => 'Detaylar', 'class' => 'form-control', 'style' => 'margin-bottom:15px')); ?>
+			<center><?php echo Form::submit('Kaydet', array('class' => 'btn btn-primary btn-lg')); ?></center>
+		<?php echo Form::close(); ?>
+
+	</div>
+</div>
+
+<div style="height:75px"></div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

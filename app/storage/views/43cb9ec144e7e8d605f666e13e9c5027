@@ -1,0 +1,301 @@
+
+
+<?php $__env->startSection("content"); ?>
+<!-- Body Begin -->
+
+<!-- Get language Begin -->
+<?php if (Session::get('lang')): ?>
+	<?php echo App::setLocale(Session::get('lang')); ?>
+<?php else: ?>
+	<?php echo App::setLocale('tr'); ?>
+<?php endif; ?>
+<!-- Get language End -->
+
+		<div style="height:50px"></div>
+		<?php if (Auth::check()): ?>
+
+			<!-- Dashboard Begin -->
+
+			<?php if (Session::get('user')->username=='admin'): ?>
+
+				<div align="center" style="margin-bottom:20px">
+					<a href="/mentor/public/create-new-account" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus-sign" style="margin-right:5px"></span> <?php echo Lang::get('messages.create_new_account'); ?> </a>
+				</div>
+
+				<table class="table table-hover">
+					<tr>
+						<th>#</th>
+						<th><?php echo Lang::get('messages.admin_id'); ?></th>
+						<th><?php echo Lang::get('messages.admin_user_type'); ?></th>
+						<th><?php echo Lang::get('messages.admin_user_name'); ?></th>
+						<th><?php echo Lang::get('messages.admin_name'); ?></th>
+						<th><?php echo Lang::get('messages.admin_surname'); ?></th>
+						<th><?php echo Lang::get('messages.admin_action'); ?></th>
+					</tr>
+
+					<?php $getUsers = DB::table('users')->get(); ?>
+
+					<?php foreach ($getUsers as $gUser): ?>
+						<tr>
+							<td style="font-weight:bold">1</td>
+							<td><?php echo $gUser->id; ?></td>
+							<td>
+								<?php if ($gUser->username=='admin'): ?>
+									system
+								<?php else: ?>
+									<?php echo $gUser->user_type; ?>
+								<?php endif; ?>
+							</td>
+							<td><?php echo $gUser->username; ?></td>
+							<td><?php echo $gUser->name; ?></td>
+							<td><?php echo $gUser->surname; ?></td>
+							<td>
+								<?php if ($gUser->username=='admin'): ?>
+									<a href="/mentor/public/account/<?php echo $gUser->id; ?>" class="btn btn-primary btn-xs" disabled><?php echo Lang::get('messages.admin_update'); ?></a>
+									<a href="javascript:void(0)" class="btn btn-danger btn-xs" onClick="javascript:if(confirm('<?php echo Lang::get('messages.admin_delete_are_you_sure'); ?>')) { window.location='/mentor/public/delete-user/<?php echo $gUser->id; ?>' }" disabled><?php echo Lang::get('messages.admin_delete'); ?></a>
+								<?php else: ?>
+									<a href="/mentor/public/account/<?php echo $gUser->id; ?>" class="btn btn-primary btn-xs"><?php echo Lang::get('messages.admin_update'); ?></a>
+									<a href="javascript:void(0)" class="btn btn-danger btn-xs" onClick="javascript:if(confirm('<?php echo Lang::get('messages.admin_delete_are_you_sure'); ?>')) { window.location='/mentor/public/delete-user/<?php echo $gUser->id; ?>' }"><?php echo Lang::get('messages.admin_delete'); ?></a>
+								<?php endif; ?>
+							</td>
+						</tr>
+					<?php endforeach; ?>
+
+				</table>
+
+			<?php else: ?>
+
+				<div class="alert alert-info">
+					<span class="glyphicon glyphicon-user" style="margin-right:10px"></span>
+					<?php echo Lang::get('messages.hi'); ?>, <b><?php echo $user->name; ?></b>.
+					<div style="height:4px"></div>
+					<span class="glyphicon glyphicon-time" style="margin-right:10px"></span>
+					<?php
+						$eDateTime = explode(" ", $user->last_login);
+						$eTime = $eDateTime[1];
+						$eDate = explode("-", $eDateTime[0]);
+						$eDay = $eDate[2];
+						$eMonth = $eDate[1];
+						$eYear = $eDate[0];
+						$eRes = $eDay.'.'.$eMonth.'.'.$eYear.' '.$eTime;
+					?>
+					<?php echo Lang::get('messages.last_login'); ?> <i><?php echo $eRes; ?></i>.
+				</div>
+<? /*
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title" style="cursor:default">
+							<span class="glyphicon glyphicon-bullhorn" style="margin-right:10px"></span> <?php echo Lang::get('messages.notifications'); ?>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<ul class="nav nav-pills nav-stacked">
+
+							<?php
+	
+								$ntfUrl = "http://www.mentormarmara.com/notifications.php";
+								$getNtf = @file_get_contents($ntfUrl);
+
+								if ($getNtf) {
+
+									$ntfFirst = explode("\n", $getNtf);
+
+									for ($ni=count($ntfFirst)-1; $ni>=0; $ni--) {
+										$ntfSecond = explode(" :: ", $ntfFirst[$ni]);
+										if (Lang::get('messages.selected_language')=='tr') {
+											echo "<li><a href=\"#\" style=\"color:#555555\">&rarr; ".$ntfSecond[0]."</a></li>";
+										} elseif (Lang::get('messages.selected_language')=='en') {
+											echo "<li><a href=\"#\" style=\"color:#555555\">&rarr; ".$ntfSecond[1]."</a></li>";
+										}
+									}
+
+								} else {
+
+									echo "<div class='alert alert-danger'>".Lang::get('messages.could_not_get_notifications')."</div>";
+
+								}
+	
+							?>
+
+						</ul>
+					</div>
+				</div>
+*/ ?>
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title" style="cursor:default">
+							<span class="glyphicon glyphicon-question-sign" style="margin-right:10px"></span> <?php echo Lang::get('messages.last_question_and_answer'); ?>
+							<div class="navbar-right" style="margin-top:-2px">
+								<?php if (Session::get('user')->user_type=='mentee'): ?>
+									<a href="/mentor/public/ask-a-question" class="btn btn-success btn-xs"><?php echo Lang::get('messages.ask_a_new_question'); ?></a>
+								<?php endif; ?>
+								<a href="/mentor/public/question-and-answer" class="btn btn-primary btn-xs"><?php echo Lang::get('messages.show_all'); ?></a>
+							</div>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<ul class="nav nav-pills nav-stacked">
+
+									<?php
+
+										if (Session::get('user')->user_type=='mentor') {
+											$rCount = DB::table('questions')->where('mentor_id', Session::get('user')->id)->count();
+											if ($rCount<=0) {
+												echo '<div class="alert alert-danger">'.Lang::get('messages.no_question_found_for_mentor_main').'</div>';
+											} else {
+												$questions = DB::table('questions')->where('mentor_id', Session::get('user')->id)->orderBy('id', 'desc')->take(5)->get();
+												$c = 1;
+
+									?>
+
+									<table class="table table-hover">
+										<tr>
+											<th><?php echo Lang::get('messages.q_title_count'); ?></th>
+											<th><?php echo Lang::get('messages.q_title_date'); ?></th>
+											<th><?php echo Lang::get('messages.q_title_question'); ?></th>
+											<th><?php echo Lang::get('messages.q_title_mentee'); ?></th>
+											<th><?php echo Lang::get('messages.q_title_status'); ?></th>
+											<th><?php echo Lang::get('messages.q_title_action'); ?></th>
+										</tr>
+										<?php foreach ($questions as $question): ?>
+										<?php $getMentee = DB::table('users')->where('id', $question->mentee_id)->first(); ?>
+										<tr>
+											<td><b><?php echo $c; ?></b></td>
+											<?php
+												$eDateTime = explode(" ", $question->date_time);
+												$eTime = $eDateTime[1];
+												$eDate = explode("-", $eDateTime[0]);
+												$eDay = $eDate[2];
+												$eMonth = $eDate[1];
+												$eYear = $eDate[0];
+												$eRes = $eDay.'.'.$eMonth.'.'.$eYear.' '.$eTime;
+											?>
+											<td><?php echo $eRes; ?></td>
+											<td><a href="/mentor/public/question/<?php echo $question->id; ?>"><?php echo $question->title; ?></a></td>
+											<td><?php echo $getMentee->name; ?> <?php echo $getMentee->surname; ?></td>
+											<?php if ($question->isActive==0): ?>
+												<td><?php echo Lang::get('messages.q_title_closed'); ?></td>
+											<?php else: ?>
+												<td style='color:green'><?php echo Lang::get('messages.q_title_active'); ?></td>
+											<?php endif; ?>
+											<td>
+												<a href="/mentor/public/question/<?php echo $question->id; ?>#writeAnswer" class="btn btn-primary btn-xs"><?php echo Lang::get('messages.q_title_answer'); ?></a>
+												<?php if ($question->isActive==0): ?>
+													<a href="/mentor/public/close-question/<?php echo $question->id; ?>/home" class="btn btn-danger btn-xs" disabled><?php echo Lang::get('messages.q_title_close'); ?></a>
+												<?php else: ?>
+													<a href="/mentor/public/close-question/<?php echo $question->id; ?>/home" class="btn btn-danger btn-xs"><?php echo Lang::get('messages.q_title_close'); ?></a>
+												<?php endif; ?>
+											</td>
+										</tr>
+										<?php $c++; ?>
+										<?php endforeach; ?>
+									</table>
+
+									<?php
+
+											}
+										} elseif (Session::get('user')->user_type=='mentee') {
+											$eCount = DB::table('questions')->where('mentee_id', Session::get('user')->id)->count();
+											if ($eCount<=0) {
+												echo '<div class="alert alert-warning">'.Lang::get('messages.no_question_found_for_mentee_main').'</div>';
+											} else {
+												$questions = DB::table('questions')->where('mentee_id', Session::get('user')->id)->orderBy('id', 'desc')->take(5)->get();
+												$c = 1;
+
+									?>
+
+									<table class="table table-hover">
+										<tr>
+											<th><?php echo Lang::get('messages.q_title_count'); ?></th>
+											<th><?php echo Lang::get('messages.q_title_date'); ?></th>
+											<th><?php echo Lang::get('messages.q_title_question'); ?></th>
+											<th><?php echo Lang::get('messages.q_title_status'); ?></th>
+											<th><?php echo Lang::get('messages.q_title_action'); ?></th>
+										</tr>
+										<?php foreach ($questions as $question): ?>
+										<?php $getMentee = DB::table('users')->where('id', $question->mentee_id)->first(); ?>
+										<tr>
+											<td><b><?php echo $c; ?></b></td>
+											<?php
+												$eDateTime = explode(" ", $question->date_time);
+												$eTime = $eDateTime[1];
+												$eDate = explode("-", $eDateTime[0]);
+												$eDay = $eDate[2];
+												$eMonth = $eDate[1];
+												$eYear = $eDate[0];
+												$eRes = $eDay.'.'.$eMonth.'.'.$eYear.' '.$eTime;
+											?>
+											<td><?php echo $eRes; ?></td>
+											<td><a href="/mentor/public/question/<?php echo $question->id; ?>"><?php echo $question->title; ?></a></td>
+											<?php if ($question->isActive==0): ?>
+												<td><?php echo Lang::get('messages.q_title_closed'); ?></td>
+											<?php else: ?>
+												<td style='color:green'><?php echo Lang::get('messages.q_title_active'); ?></td>
+											<?php endif; ?>
+											<td>
+												<a href="/mentor/public/question/<?php echo $question->id; ?>#writeAnswer" class="btn btn-primary btn-xs"><?php echo Lang::get('messages.q_title_answer'); ?></a>
+												<?php if ($question->isActive==0): ?>
+													<a href="/mentor/public/close-question/<?php echo $question->id; ?>/home" class="btn btn-danger btn-xs" disabled><?php echo Lang::get('messages.q_title_close'); ?></a>
+												<?php else: ?>
+													<a href="/mentor/public/close-question/<?php echo $question->id; ?>/home" class="btn btn-danger btn-xs"><?php echo Lang::get('messages.q_title_close'); ?></a>
+												<?php endif; ?>
+											</td>
+										</tr>
+										<?php $c++; ?>
+										<?php endforeach; ?>
+									</table>
+
+									<?php
+
+											}
+										}
+
+									?>
+
+						</ul>
+					</div>
+				</div>
+
+			<?php endif; ?>
+
+			<!-- Dashboard End -->
+
+		<?php else: ?>
+
+			<div align="center">
+				<div class="panel panel-default mmLoginPanel">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<span class="glyphicon glyphicon-lock"></span> <?php echo Lang::get('messages.login_title'); ?>
+						</h3>
+					</div>
+
+					<?php if (Session::has('loginError')): ?>
+						<?php if (Session::get('loginError')=='err1'): ?>
+							<div class="alert alert-danger"><?php echo Lang::get('messages.username_and_password_required'); ?></div>
+						<?php elseif (Session::get('loginError')=='err2'): ?>
+							<div class="alert alert-danger"><?php echo Lang::get('messages.login_incorrect'); ?></div>
+						<?php else: ?>
+							<div class="alert alert-danger"><?php echo Session::get('loginError'); ?></div>
+						<?php endif; ?>
+					<?php endif; ?>
+
+					<div class="panel-body">
+						
+						<?php echo Form::open(array('action' => 'HomeController@login')); ?>
+							<?php echo Form::token(); ?>
+							<?php echo Form::text('username', Input::old('username'), array('placeholder' => Lang::get('messages.username'), 'class' => 'form-control', 'style' => 'margin:10px;width:300px')); ?>
+							<?php echo Form::password('password', array('placeholder' => Lang::get('messages.password'), 'class' => 'form-control', 'style' => 'margin:10px;width:300px')); ?>
+							<?php echo Form::submit(Lang::get('messages.login'), array('class' => 'btn btn-primary', 'style' => 'margin:10px')); ?>
+						<?php echo Form::close(); ?>
+
+					</div>
+				</div>
+			</div>
+
+		<?php endif; ?>
+		<div style="height:50px"></div>
+		<!-- Body End -->
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make("layout.main", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

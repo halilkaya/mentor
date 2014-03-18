@@ -1,0 +1,42 @@
+
+<?php $__env->startSection('content'); ?>
+
+<!-- Get language Begin -->
+<?php if (Session::get('lang')): ?>
+	<?php echo App::setLocale(Session::get('lang')); ?>
+<?php else: ?>
+	<?php echo App::setLocale('tr'); ?>
+<?php endif; ?>
+<!-- Get language End -->
+
+<div style="height:45px"></div>
+
+<?php if (Session::has('error')): ?>
+	<?php if (Session::get('error')=='err1'): ?>
+		<div class="alert alert-danger">
+			<?php echo Lang::get('messages.new_question_error'); ?>
+		</div>
+	<?php endif; ?>
+<?php endif; ?>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			<span class="glyphicon glyphicon-pencil" style="margin-right:10px"></span> <?php echo Lang::get('messages.ask_a_new_question'); ?>
+		</h3>
+	</div>
+	<div class="panel-body">
+		
+		<?php echo Form::open(array('action' => 'QuestionController@save')); ?>
+			<?php echo Form::text('title', Input::old('title'), array('placeholder' => Lang::get('messages.question_title'), 'class' => 'form-control', 'style' => 'margin-bottom:15px')); ?>
+			<?php echo Form::textarea('question', Input::old('question'), array('placeholder' => Lang::get('messages.question_content'), 'class' => 'form-control', 'style' => '')); ?>
+			<center><?php echo Form::submit(Lang::get('messages.question_send'), array('class' => 'btn btn-primary btn-lg', 'style' => 'margin-top:15px')); ?></center>
+		<?php echo Form::close(); ?>
+
+	</div>
+</div>
+
+<div style="height:50px"></div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

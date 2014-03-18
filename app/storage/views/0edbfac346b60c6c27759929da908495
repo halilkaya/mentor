@@ -1,0 +1,59 @@
+
+<?php $__env->startSection('content'); ?>
+
+<!-- Get language Begin -->
+<?php if (Session::get('lang')): ?>
+	<?php echo App::setLocale(Session::get('lang')); ?>
+<?php else: ?>
+	<?php echo App::setLocale('tr'); ?>
+<?php endif; ?>
+<!-- Get language End -->
+
+<?php $mentorInfo = DB::table('users')->where('id', $mentor_id)->first(); ?>
+
+<div style="height:45px"></div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			<b><?php echo Lang::get('messages.mentor_info_title'); ?></b>
+		</h3>
+	</div>
+	<div class="panel-body">
+		
+		<table class="table table-hover">
+			<tr>
+				<td style="width:350px"><span class="glyphicon glyphicon-user" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.mentor_name'); ?></b></td>
+				<td><?php echo $mentorInfo->name; ?> <?php echo $mentorInfo->surname; ?></td>
+			</tr>
+			<tr>
+				<td style="width:350px"><span class="glyphicon glyphicon-book" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.mentor_department'); ?></b></td>
+				<td><?php echo $mentorInfo->department; ?></td>
+			</tr>
+			<tr>
+				<td style="width:350px"><span class="glyphicon glyphicon-bookmark" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.mentor_class'); ?></b></td>
+				<td><?php echo $mentorInfo->class; ?></td>
+			</tr>
+			<tr>
+				<td style="width:350px"><span class="glyphicon glyphicon-time" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.mentor_available_time'); ?></b></td>
+				<td><?php echo $mentorInfo->available_time; ?></td>
+			</tr>
+			<tr>
+				<td style="width:350px"><span class="glyphicon glyphicon-list-alt" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.mentor_help_topics'); ?></b></td>
+				<td><?php echo $mentorInfo->help_topics; ?></td>
+			</tr>
+			<tr>
+				<td style="width:350px"><span class="glyphicon glyphicon-star-empty" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.mentor_hobbies'); ?></b></td>
+				<td><?php echo $mentorInfo->hobbies; ?></td>
+			</tr>
+			<tr>
+				<td style="width:350px"><span class="glyphicon glyphicon-search" style="margin-right:15px"></span> <b><?php echo Lang::get('messages.mentor_description'); ?></b></td>
+				<td><?php echo $mentorInfo->description; ?></td>
+			</tr>
+		</table>
+
+	</div>
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
