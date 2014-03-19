@@ -17,8 +17,8 @@
 <br />
 <li>Do not forget to change <code>'key'</code> line with yours!</li>
 <li>Edit <code>app/config/database.php</code> with your connection strings.</li>
-<li>If you don't want to use an API, you can comment all lines after <code>// API</code>.</li>
 <li>For API usage, there is a basic API key placed in <code>app/routes.php</code>. Change this line with an API key that you have determined by yourself.</li>
+<li>If you don't want to use an API, you can comment all lines after <code>// API</code>.</li>
 </ul>
 <br />
 You are ready to use it now!
