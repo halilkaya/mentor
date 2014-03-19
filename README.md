@@ -9,7 +9,7 @@
 <p>
 <ul>
 <li>Clone a copy of project.</li>
-<li>Edit 'index.php' to redirect /public automatically. (Optional)</li>
+<li>Edit `index.php` to redirect /public automatically. (Optional)</li>
 <li></li>
 </ul>
 </p>
