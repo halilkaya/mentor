@@ -4,3 +4,12 @@
 <p>You can improve it for yourself by cloning a copy from here.</p>
 <br />
 <p><b>PS:</b> This project is currently used in <a href="http://www.mentormarmara.com/" target="_blank">www.mentormarmara.com</a></p>
+<br />
+<h1>Usage</h1>
+<p>
+<ul>
+<li>Clone a copy of project.</li>
+<li>Edit 'index.php' to redirect /public automatically. (Optional)</li>
+<li></li>
+</ul>
+</p>
