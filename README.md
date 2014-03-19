@@ -18,6 +18,7 @@
 <li>Do not forget to change <code>'key'</code> line with yours!</li>
 <li>Edit <code>app/config/database.php</code> with your connection strings.</li>
 <li>You can find a sample for database schema in <code>mentor_db.sql</code> file.</li>
+<li>Default both username and password are <code>admin</code>. admin user is only for managing users.</li>
 <li>For API usage, there is a basic API key placed in <code>app/routes.php</code>. Change this line with an API key that you have determined by yourself.</li>
 <li>If you don't want to use an API, you can comment all lines after <code>// API</code>.</li>
 </ul>
