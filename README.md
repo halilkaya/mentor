@@ -4,19 +4,22 @@
 <p>You can improve it for yourself by cloning a copy from here.</p>
 <br />
 <p><b>PS:</b> This project is currently used in <a href="http://www.mentormarmara.com/" target="_blank">www.mentormarmara.com</a></p>
-<br />
+
 <h1>Usage</h1>
 <p>
 <ul>
 <li>Clone a copy of project.</li>
 <li>Edit <code>index.php</code> to redirect <code>/public</code> automatically. (Optional)</li>
-<li>Edit <code>app/config/app.php</code>
+<br />
+<li>Edit <code>app/config/app.php</code>.</li>
 <li>If you are in debug mode, change <code>'debug'</code> line as <code>true</code>. Otherwise, when it is ready to publish, do not forget to change it as <code>false</code> again.</li>
 <li>Main URL of project when published must be placed in <code>'url'</code> line.</li>
+<br />
 <li>Do not forget to change <code>'key'</code> line with yours!</li>
-</li>
 <li>Edit <code>app/config/database.php</code> with your connection strings.</li>
 <li>If you don't want to use an API, you can comment all lines after <code>// API</code>.</li>
 <li>For API usage, there is a basic API key placed in <code>app/routes.php</code>. Change this line with an API key that you have determined by yourself.</li>
 </ul>
+<br />
+You are ready to use it now!
 </p>
