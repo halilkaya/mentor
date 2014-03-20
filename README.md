@@ -15,7 +15,7 @@
 <li>If you are in debug mode, change <code>'debug'</code> line as <code>true</code>. Otherwise, when it is ready to publish, do not forget to change it as <code>false</code> again.</li>
 <li>Main URL of project when published must be placed in <code>'url'</code> line.</li>
 <br />
-<li>Do not forget to change <code>'key'</code> line with yours!</li>
+<li>Do not forget to change <code>'key'</code> line with yours! You can generate an app key by typing <code>php artisan key:generate</code></li>
 <li>Edit <code>app/config/database.php</code> with your connection strings.</li>
 <li>You can find a sample for database schema in <code>mentor_db.sql</code> file.</li>
 <li>Default both username and password are <code>admin</code>. admin user is only for managing users.</li>
