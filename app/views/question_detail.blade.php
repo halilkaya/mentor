@@ -19,13 +19,13 @@
 
 <center>
 	<div class="btn-group">
-		<a href="/mentor/public/question-and-answer" class="btn btn-default">&larr; {{Lang::get('messages.q_title_all_questions')}}</a>
+		<a href="{{ URL::to('/question-and-answer') }}" class="btn btn-default">&larr; {{Lang::get('messages.q_title_all_questions')}}</a>
 		@if ($q->isActive==1)
-			<a href="/mentor/public/close-question/{{$question_id}}/detail" class="btn btn-default"><span class="glyphicon glyphicon-ok-circle"></span> {{Lang::get('messages.q_title_close_if_solved')}}</a>
+			<a href="{{ URL::to('/close-question/' . $question_id . '/detail') }}" class="btn btn-default"><span class="glyphicon glyphicon-ok-circle"></span> {{Lang::get('messages.q_title_close_if_solved')}}</a>
 		@else
-			<a href="/mentor/public/close-question/{{$question_id}}/detail" class="btn btn-default" disabled><span class="glyphicon glyphicon-ok-circle"></span> {{Lang::get('messages.q_title_close_if_solved')}}</a>
+			<a href="{{ URL::to('/close-question/' . $question_id . '/detail') }}" class="btn btn-default" disabled><span class="glyphicon glyphicon-ok-circle"></span> {{Lang::get('messages.q_title_close_if_solved')}}</a>
 		@endif
-		<a href="/mentor/public/question/{{$question_id}}#writeAnswer" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> {{Lang::get('messages.q_title_answer')}}</a>
+		<a href="{{ URL::to('/question/' . $question_id) }}#writeAnswer" class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span> {{Lang::get('messages.q_title_answer')}}</a>
 	</div>
 </center>
 

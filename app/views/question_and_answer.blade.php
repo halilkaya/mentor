@@ -14,7 +14,7 @@
 
 <div style="margin-bottom:15px" align="center">
 	@if (Session::get('user')->user_type=='mentee')
-		<a href="/mentor/public/ask-a-question" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-pencil" style="margin-right:10px"></span> {{Lang::get('messages.ask_a_new_question')}}</a>
+		<a href="{{ URL::to('/ask-a-question' ) }}" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-pencil" style="margin-right:10px"></span> {{Lang::get('messages.ask_a_new_question')}}</a>
 	@endif
 </div>
 
@@ -61,7 +61,7 @@
 					$eRes = $eDay.'.'.$eMonth.'.'.$eYear.' '.$eTime;
 				?>
 				<td>{{$eRes}}</td>
-				<td><a href="/mentor/public/question/{{$question->id}}">{{$question->title}}</a></td>
+				<td><a href="{{ URL::to('/question/' . $question->id ) }}">{{$question->title}}</a></td>
 				<td>{{$getMentee->name}} {{$getMentee->surname}}</td>
 				@if ($question->isActive==0)
 					<td>{{Lang::get('messages.q_title_closed')}}</td>
@@ -69,11 +69,11 @@
 					<td style='color:green'>{{Lang::get('messages.q_title_active')}}</td>
 				@endif
 				<td>
-					<a href="/mentor/public/question/{{$question->id}}#writeAnswer" class="btn btn-primary btn-xs">{{Lang::get('messages.q_title_answer')}}</a>
+					<a href="{{ URL::to('/question/' . $question->id ) }}#writeAnswer" class="btn btn-primary btn-xs">{{Lang::get('messages.q_title_answer')}}</a>
 					@if ($question->isActive==0)
-						<a href="/mentor/public/close-question/{{$question->id}}/list" class="btn btn-danger btn-xs" disabled>{{Lang::get('messages.q_title_close')}}</a>
+						<a href="{{ URL::to('/close-question/' . $question->id . '/list') }}" class="btn btn-danger btn-xs" disabled>{{Lang::get('messages.q_title_close')}}</a>
 					@else
-						<a href="/mentor/public/close-question/{{$question->id}}/list" class="btn btn-danger btn-xs">{{Lang::get('messages.q_title_close')}}</a>
+						<a href="{{ URL::to('/close-question/' . $question->id . '/list') }}" class="btn btn-danger btn-xs">{{Lang::get('messages.q_title_close')}}</a>
 					@endif
 				</td>
 			</tr>
@@ -116,18 +116,18 @@
 					$eRes = $eDay.'.'.$eMonth.'.'.$eYear.' '.$eTime;
 				?>
 				<td>{{$eRes}}</td>
-				<td><a href="/mentor/public/question/{{$question->id}}">{{$question->title}}</a></td>
+				<td><a href="{{ URL::to('/question/' . $question->id) }}">{{$question->title}}</a></td>
 				@if ($question->isActive==0)
 					<td>{{Lang::get('messages.q_title_closed')}}</td>
 				@else
 					<td style='color:green'>{{Lang::get('messages.q_title_active')}}</td>
 				@endif
 				<td>
-					<a href="/mentor/public/question/{{$question->id}}#writeAnswer" class="btn btn-primary btn-xs">{{Lang::get('messages.q_title_answer')}}</a>
+					<a href="{{ URL::to('/question/' . $question->id) }}#writeAnswer" class="btn btn-primary btn-xs">{{Lang::get('messages.q_title_answer')}}</a>
 					@if ($question->isActive==0)
-						<a href="/mentor/public/close-question/{{$question->id}}/list" class="btn btn-danger btn-xs" disabled>{{Lang::get('messages.q_title_close')}}</a>
+						<a href="{{ URL::to('/close-question/' . $question->id . '/list') }}" class="btn btn-danger btn-xs" disabled>{{Lang::get('messages.q_title_close')}}</a>
 					@else
-						<a href="/mentor/public/close-question/{{$question->id}}/list" class="btn btn-danger btn-xs">{{Lang::get('messages.q_title_close')}}</a>
+						<a href="{{ URL::to('/close-question/' . $question->id . '/list') }}" class="btn btn-danger btn-xs">{{Lang::get('messages.q_title_close')}}</a>
 					@endif
 				</td>
 			</tr>

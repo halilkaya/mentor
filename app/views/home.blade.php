@@ -20,7 +20,7 @@
 			@if (Session::get('user')->username=='admin')
 
 				<div align="center" style="margin-bottom:20px">
-					<a href="/mentor/public/create-new-account" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus-sign" style="margin-right:5px"></span> {{Lang::get('messages.create_new_account')}} </a>
+					<a href="create-new-account" class="btn btn-success btn-lg"><span class="glyphicon glyphicon-plus-sign" style="margin-right:5px"></span> {{Lang::get('messages.create_new_account')}} </a>
 				</div>
 
 				<table class="table table-hover">
@@ -52,11 +52,11 @@
 							<td>{{$gUser->surname}}</td>
 							<td>
 								@if ($gUser->username=='admin')
-									<a href="/mentor/public/account/{{$gUser->id}}" class="btn btn-primary btn-xs" disabled>{{Lang::get('messages.admin_update')}}</a>
-									<a href="javascript:void(0)" class="btn btn-danger btn-xs" onClick="javascript:if(confirm('{{Lang::get('messages.admin_delete_are_you_sure')}}')) { window.location='/mentor/public/delete-user/{{$gUser->id}}' }" disabled>{{Lang::get('messages.admin_delete')}}</a>
+									<a href="{{ URL::to('/account/' . $gUser->id) }}" class="btn btn-primary btn-xs" disabled>{{Lang::get('messages.admin_update')}}</a>
+									<a href="javascript:void(0)" class="btn btn-danger btn-xs" onClick="javascript:if(confirm('{{Lang::get('messages.admin_delete_are_you_sure')}}')) { window.location='{{ URL::to('/delete-user/' . $gUser->id) }}' }" disabled>{{Lang::get('messages.admin_delete')}}</a>
 								@else
-									<a href="/mentor/public/account/{{$gUser->id}}" class="btn btn-primary btn-xs">{{Lang::get('messages.admin_update')}}</a>
-									<a href="javascript:void(0)" class="btn btn-danger btn-xs" onClick="javascript:if(confirm('{{Lang::get('messages.admin_delete_are_you_sure')}}')) { window.location='/mentor/public/delete-user/{{$gUser->id}}' }">{{Lang::get('messages.admin_delete')}}</a>
+									<a href="{{ URL::to('/account/' . $gUser->id) }}" class="btn btn-primary btn-xs">{{Lang::get('messages.admin_update')}}</a>
+									<a href="javascript:void(0)" class="btn btn-danger btn-xs" onClick="javascript:if(confirm('{{Lang::get('messages.admin_delete_are_you_sure')}}')) { window.location='{{ URL::to('/delete-user/' . $gUser->id) }}' }">{{Lang::get('messages.admin_delete')}}</a>
 								@endif
 							</td>
 						</tr>
@@ -89,9 +89,9 @@
 							<span class="glyphicon glyphicon-question-sign" style="margin-right:10px"></span> {{Lang::get('messages.last_question_and_answer')}}
 							<div class="navbar-right" style="margin-top:-2px">
 								@if (Session::get('user')->user_type=='mentee')
-									<a href="/mentor/public/ask-a-question" class="btn btn-success btn-xs">{{Lang::get('messages.ask_a_new_question')}}</a>
+									<a href="{{ URL::to('/ask-a-question') }}" class="btn btn-success btn-xs">{{Lang::get('messages.ask_a_new_question')}}</a>
 								@endif
-								<a href="/mentor/public/question-and-answer" class="btn btn-primary btn-xs">{{Lang::get('messages.show_all')}}</a>
+								<a href="{{ URL::to('/question-and-answer') }}" class="btn btn-primary btn-xs">{{Lang::get('messages.show_all')}}</a>
 							</div>
 						</h3>
 					</div>
@@ -133,7 +133,7 @@
 												$eRes = $eDay.'.'.$eMonth.'.'.$eYear.' '.$eTime;
 											?>
 											<td>{{$eRes}}</td>
-											<td><a href="/mentor/public/question/{{$question->id}}">{{$question->title}}</a></td>
+											<td><a href="{{ URL::to('/question/' . $question->id) }}">{{$question->title}}</a></td>
 											<td>{{$getMentee->name}} {{$getMentee->surname}}</td>
 											@if ($question->isActive==0)
 												<td>{{Lang::get('messages.q_title_closed')}}</td>
@@ -141,11 +141,11 @@
 												<td style='color:green'>{{Lang::get('messages.q_title_active')}}</td>
 											@endif
 											<td>
-												<a href="/mentor/public/question/{{$question->id}}#writeAnswer" class="btn btn-primary btn-xs">{{Lang::get('messages.q_title_answer')}}</a>
+												<a href="{{ URL::to('/question/' . $question->id) }}#writeAnswer" class="btn btn-primary btn-xs">{{Lang::get('messages.q_title_answer')}}</a>
 												@if ($question->isActive==0)
-													<a href="/mentor/public/close-question/{{$question->id}}/home" class="btn btn-danger btn-xs" disabled>{{Lang::get('messages.q_title_close')}}</a>
+													<a href="{{ URL::to('/close-question/' . $question->id . '/home') }}" class="btn btn-danger btn-xs" disabled>{{Lang::get('messages.q_title_close')}}</a>
 												@else
-													<a href="/mentor/public/close-question/{{$question->id}}/home" class="btn btn-danger btn-xs">{{Lang::get('messages.q_title_close')}}</a>
+													<a href="{{ URL::to('/close-question/' . $question->id . '/home') }}" class="btn btn-danger btn-xs">{{Lang::get('messages.q_title_close')}}</a>
 												@endif
 											</td>
 										</tr>
@@ -188,18 +188,18 @@
 												$eRes = $eDay.'.'.$eMonth.'.'.$eYear.' '.$eTime;
 											?>
 											<td>{{$eRes}}</td>
-											<td><a href="/mentor/public/question/{{$question->id}}">{{$question->title}}</a></td>
+											<td><a href="{{ URL::to('/question/' . $question->id) }}">{{$question->title}}</a></td>
 											@if ($question->isActive==0)
 												<td>{{Lang::get('messages.q_title_closed')}}</td>
 											@else
 												<td style='color:green'>{{Lang::get('messages.q_title_active')}}</td>
 											@endif
 											<td>
-												<a href="/mentor/public/question/{{$question->id}}#writeAnswer" class="btn btn-primary btn-xs">{{Lang::get('messages.q_title_answer')}}</a>
+												<a href="{{ URL::to('/question/' . $question->id) }}#writeAnswer" class="btn btn-primary btn-xs">{{Lang::get('messages.q_title_answer')}}</a>
 												@if ($question->isActive==0)
-													<a href="/mentor/public/close-question/{{$question->id}}/home" class="btn btn-danger btn-xs" disabled>{{Lang::get('messages.q_title_close')}}</a>
+													<a href="{{ URL::to('/close-question/' . $question->id . '/home') }}" class="btn btn-danger btn-xs" disabled>{{Lang::get('messages.q_title_close')}}</a>
 												@else
-													<a href="/mentor/public/close-question/{{$question->id}}/home" class="btn btn-danger btn-xs">{{Lang::get('messages.q_title_close')}}</a>
+													<a href="{{ URL::to('/close-question/' . $question->id . '/home') }}" class="btn btn-danger btn-xs">{{Lang::get('messages.q_title_close')}}</a>
 												@endif
 											</td>
 										</tr>
